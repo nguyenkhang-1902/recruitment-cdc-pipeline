@@ -120,6 +120,18 @@ services:
     networks:
       - etl-net
 
+  backend:
+    build:
+      context: ./app/backend
+    container_name: recruitment-api
+    environment:
+      - DATABASE_URL=mysql+pymysql://root:root@mysql:3306/recruitment_dw
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    networks:
+      - etl-net
 # --- NETWORK & STORAGE DEFINITIONS ---
 networks:
   etl-net:
