@@ -1,23 +1,27 @@
-# Docker data (Dữ liệu thực tế của DB - Rất nặng)
+# --- Database Persistence (Heavy Data) ---
 postgres_data/
 mysql_data/
 cassandra_data/
 
-# Airflow logs & checkpoints
+# --- Airflow Runtime & Spark Checkpoints ---
 data-pipeline/airflow/logs/
-data-pipeline/airflow/dags/
+# data-pipeline/airflow/dags/
 data-pipeline/scripts/processing/checkpoints/
 
-# Python cache
+# --- Python & System Cache ---
 __pycache__/
 *.py[cod]
 *$py.class
+*.log
 
-# Môi trường ảo (nếu có)
-venv/
+# --- Environment & Virtual Environments ---
 .env
+venv/
+.venv/
 
-# Các file tạm của hệ thống
+# --- IDE & OS Temporary Files ---
 .DS_Store
 .idea/
 .vscode/
+*.swp
+*.save

@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  # --- CƠ SỞ DỮ LIỆU ---
+  # --- DATA PERSISTENCE LAYER ---
   cassandra:
     image: cassandra:3.11
     container_name: cassandra
@@ -8,7 +10,7 @@ services:
     ports:
       - "9042:9042"
     environment:
-      - MAX_HEAP_SIZE=1G
+      - MAX_HEAP_SIZE=1G # Memory constraints for stable runtime
       - HEAP_NEWSIZE=400M
     networks:
       - etl-net
@@ -26,7 +28,7 @@ services:
     networks:
       - etl-net
 
-  # --- HỆ SINH THÁI KAFKA ---
+  # --- STREAMING & MESSAGING INFRASTRUCTURE ---
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
     container_name: zookeeper
@@ -46,7 +48,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      # QUAN TRỌNG: Sửa Advertised Listeners để Airflow/Spark trong network gọi được broker:29092
+      # Multi-listener configuration for internal (Docker) and external (Host) access
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
@@ -54,18 +56,18 @@ services:
     networks:
       - etl-net
 
-  # --- XỬ LÝ (SPARK) ---
+  # --- COMPUTE LAYER (SPARK) ---
   spark:
     image: apache/spark:3.5.1
     container_name: spark
-    user: root # Thêm quyền root để Spark ghi được log/data nếu cần
+    user: root
     command: [ "bash", "-c", "sleep infinity" ]
     volumes:
       - ./data-pipeline:/opt/spark/data-pipeline
     networks:
       - etl-net
 
-  # --- ĐIỀU PHỐI (AIRFLOW) ---
+  # --- ORCHESTRATION LAYER (AIRFLOW) ---
   postgres-airflow:
     image: postgres:13
     container_name: postgres-airflow
@@ -86,7 +88,9 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - PYTHONPATH=/opt/airflow/scripts
-      # Bổ sung driver Spark cho Airflow
+      # Worker performance tuning
+      - AIRFLOW__CORE__PARALLELISM=10
+      - AIRFLOW__CORE__WORKER_CONCURRENCY=10
     volumes:
       - ./data-pipeline/airflow/dags:/opt/airflow/dags
       - ./data-pipeline/scripts:/opt/airflow/scripts
@@ -116,6 +120,7 @@ services:
     networks:
       - etl-net
 
+# --- NETWORK & STORAGE DEFINITIONS ---
 networks:
   etl-net:
     driver: bridge
