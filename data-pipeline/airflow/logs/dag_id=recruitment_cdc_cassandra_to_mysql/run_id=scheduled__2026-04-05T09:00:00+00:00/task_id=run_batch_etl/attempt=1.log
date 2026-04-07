@@ -1,0 +1,225 @@
+[2026-04-05T10:00:03.218+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-05T10:00:03.238+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_batch_etl scheduled__2026-04-05T09:00:00+00:00 [queued]>
+[2026-04-05T10:00:03.252+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_batch_etl scheduled__2026-04-05T09:00:00+00:00 [queued]>
+[2026-04-05T10:00:03.253+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-04-05T10:00:03.268+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): run_batch_etl> on 2026-04-05 09:00:00+00:00
+[2026-04-05T10:00:03.278+0000] {standard_task_runner.py:72} INFO - Started process 727 to run task
+[2026-04-05T10:00:03.287+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'recruitment_cdc_cassandra_to_mysql', 'run_batch_etl', 'scheduled__2026-04-05T09:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmp84z4uesx']
+[2026-04-05T10:00:03.291+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask run_batch_etl
+[2026-04-05T10:00:03.370+0000] {task_command.py:467} INFO - Running <TaskInstance: recruitment_cdc_cassandra_to_mysql.run_batch_etl scheduled__2026-04-05T09:00:00+00:00 [running]> on host c79c22db6b22
+[2026-04-05T10:00:03.520+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='recruitment_cdc_cassandra_to_mysql' AIRFLOW_CTX_TASK_ID='run_batch_etl' AIRFLOW_CTX_EXECUTION_DATE='2026-04-05T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-05T09:00:00+00:00'
+[2026-04-05T10:00:03.522+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-05T10:01:15.991+0000] {logging_mixin.py:190} INFO - >>> Loading data from Cassandra...
+[2026-04-05T10:01:22.278+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/processing/batch_etl_cassandra_to_mysql.py", line 49, in main
+    processed_data = process_raw_data(raw_data).cache()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 1521, in cache
+    self._jdf.cache()
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/protocol.py", line 327, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o59.cache.
+: java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.
+This stopped SparkContext was created at:
+
+org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+py4j.Gateway.invoke(Gateway.java:238)
+py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+java.base/java.lang.Thread.run(Thread.java:840)
+
+The currently active SparkContext was created at:
+
+(No active SparkContext.)
+         
+	at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:122)
+	at org.apache.spark.sql.SparkSession.<init>(SparkSession.scala:113)
+	at org.apache.spark.sql.SparkSession.cloneSession(SparkSession.scala:278)
+	at org.apache.spark.sql.SparkSession$.getOrCloneSessionWithConfigsOff(SparkSession.scala:1255)
+	at org.apache.spark.sql.execution.CacheManager.getOrCloneSessionWithConfigsOff(CacheManager.scala:406)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:121)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:93)
+	at org.apache.spark.sql.Dataset.persist(Dataset.scala:3775)
+	at org.apache.spark.sql.Dataset.cache(Dataset.scala:3785)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[2026-04-05T10:01:22.299+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=recruitment_cdc_cassandra_to_mysql, task_id=run_batch_etl, run_id=scheduled__2026-04-05T09:00:00+00:00, execution_date=20260405T090000, start_date=20260405T100003, end_date=20260405T100122
+[2026-04-05T10:01:22.329+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-04-05T10:01:22.330+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 25 for task run_batch_etl (An error occurred while calling o59.cache.
+: java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.
+This stopped SparkContext was created at:
+
+org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+py4j.Gateway.invoke(Gateway.java:238)
+py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+java.base/java.lang.Thread.run(Thread.java:840)
+
+The currently active SparkContext was created at:
+
+(No active SparkContext.)
+         
+	at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:122)
+	at org.apache.spark.sql.SparkSession.<init>(SparkSession.scala:113)
+	at org.apache.spark.sql.SparkSession.cloneSession(SparkSession.scala:278)
+	at org.apache.spark.sql.SparkSession$.getOrCloneSessionWithConfigsOff(SparkSession.scala:1255)
+	at org.apache.spark.sql.execution.CacheManager.getOrCloneSessionWithConfigsOff(CacheManager.scala:406)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:121)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:93)
+	at org.apache.spark.sql.Dataset.persist(Dataset.scala:3775)
+	at org.apache.spark.sql.Dataset.cache(Dataset.scala:3785)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+; 727)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/processing/batch_etl_cassandra_to_mysql.py", line 49, in main
+    processed_data = process_raw_data(raw_data).cache()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 1521, in cache
+    self._jdf.cache()
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/protocol.py", line 327, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o59.cache.
+: java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.
+This stopped SparkContext was created at:
+
+org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+py4j.Gateway.invoke(Gateway.java:238)
+py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+java.base/java.lang.Thread.run(Thread.java:840)
+
+The currently active SparkContext was created at:
+
+(No active SparkContext.)
+         
+	at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:122)
+	at org.apache.spark.sql.SparkSession.<init>(SparkSession.scala:113)
+	at org.apache.spark.sql.SparkSession.cloneSession(SparkSession.scala:278)
+	at org.apache.spark.sql.SparkSession$.getOrCloneSessionWithConfigsOff(SparkSession.scala:1255)
+	at org.apache.spark.sql.execution.CacheManager.getOrCloneSessionWithConfigsOff(CacheManager.scala:406)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:121)
+	at org.apache.spark.sql.execution.CacheManager.cacheQuery(CacheManager.scala:93)
+	at org.apache.spark.sql.Dataset.persist(Dataset.scala:3775)
+	at org.apache.spark.sql.Dataset.cache(Dataset.scala:3785)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[2026-04-05T10:01:22.371+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-04-05T10:01:22.393+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-05T10:01:22.395+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

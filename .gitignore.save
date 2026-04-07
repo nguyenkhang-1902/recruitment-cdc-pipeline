@@ -1,0 +1,22 @@
+# Docker data (Dữ liệu thực tế của DB - Rất nặng)
+postgres_data/
+mysql_data/
+cassandra_data/
+
+# Airflow logs & checkpoints
+data-pipeline/airflow/logs/
+data-pipeline/scripts/processing/checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Môi trường ảo (nếu có)
+venv/
+.env
+
+# Các file tạm của hệ thống
+.DS_Store
+.idea/
+.vscode/

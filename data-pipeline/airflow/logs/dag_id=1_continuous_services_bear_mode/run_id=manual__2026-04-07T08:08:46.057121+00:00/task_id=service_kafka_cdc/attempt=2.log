@@ -1,0 +1,1101 @@
+[2026-04-07T08:10:50.918+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-07T08:10:50.936+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:10:50.948+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:10:50.949+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 6
+[2026-04-07T08:10:50.962+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): service_kafka_cdc> on 2026-04-07 08:08:46.057121+00:00
+[2026-04-07T08:10:50.969+0000] {standard_task_runner.py:72} INFO - Started process 6220 to run task
+[2026-04-07T08:10:50.973+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '1_continuous_services_bear_mode', 'service_kafka_cdc', 'manual__2026-04-07T08:08:46.057121+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dag_continuous_services.py', '--cfg-path', '/tmp/tmpw2gw5io1']
+[2026-04-07T08:10:50.977+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask service_kafka_cdc
+[2026-04-07T08:10:51.033+0000] {task_command.py:467} INFO - Running <TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [running]> on host 964a90234230
+[2026-04-07T08:10:51.155+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='1_continuous_services_bear_mode' AIRFLOW_CTX_TASK_ID='service_kafka_cdc' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T08:08:46.057121+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T08:08:46.057121+00:00'
+[2026-04-07T08:10:51.156+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-07T08:10:51.199+0000] {cluster.py:1324} WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['cassandra'], lbp = None)
+[2026-04-07T08:10:51.206+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 66 to 65 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:10:51.210+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 65 to 5 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:10:51.213+0000] {connection.py:1290} ERROR - Closing connection <AsyncoreConnection(134970339771392) 172.19.0.6:9042> due to protocol error: Error from server: code=000a [Protocol error] message="Beta version of the protocol used (5/v5-beta), but USE_BETA flag is unset"
+[2026-04-07T08:10:51.215+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 5 to 4 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:10:51.221+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-07T08:10:51.227+0000] {policies.py:289} INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '172.19.0.6:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+[2026-04-07T08:10:51.247+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-07T08:10:51.249+0000] {logging_mixin.py:190} INFO - 🚀 CDC Polling started at 2026-04-07 08:09:51.248649
+[2026-04-07T08:10:51.399+0000] {protocol.py:1210} WARNING - Server warning: Read 9032 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:09:51.248649 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.412+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:10:51.420+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 31 bản ghi lên Kafka!
+[2026-04-07T08:11:09.247+0000] {protocol.py:1210} WARNING - Server warning: Read 9032 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:10:48.000000 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:11:24.344+0000] {protocol.py:1210} WARNING - Server warning: Read 9035 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:10:48.000000 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:11:24.352+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:24.352+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:24.352+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:24.353+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 3 bản ghi lên Kafka!
+[2026-04-07T08:11:42.168+0000] {protocol.py:1210} WARNING - Server warning: Read 9036 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:11:10.000000 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:11:42.171+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:42.173+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 1 bản ghi lên Kafka!
+[2026-04-07T08:11:57.245+0000] {protocol.py:1210} WARNING - Server warning: Read 9055 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:11:30.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:11:57.250+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.251+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.251+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.251+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.251+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.252+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.253+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.253+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.253+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.253+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.254+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.254+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.255+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:11:57.257+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 19 bản ghi lên Kafka!
+[2026-04-07T08:12:15.035+0000] {protocol.py:1210} WARNING - Server warning: Read 9055 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:11:53.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:12:30.121+0000] {protocol.py:1210} WARNING - Server warning: Read 9074 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:11:53.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:12:30.126+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.126+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.127+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:30.128+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 19 bản ghi lên Kafka!
+[2026-04-07T08:12:47.922+0000] {protocol.py:1210} WARNING - Server warning: Read 9093 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:12:16.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:12:47.928+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.928+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.928+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.929+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.930+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.930+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.930+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.930+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.930+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:12:47.931+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 19 bản ghi lên Kafka!
+[2026-04-07T08:13:03.084+0000] {protocol.py:1210} WARNING - Server warning: Read 9107 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:12:36.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:13:03.092+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.092+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:03.096+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 14 bản ghi lên Kafka!
+[2026-04-07T08:13:20.905+0000] {protocol.py:1210} WARNING - Server warning: Read 9107 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:12:59.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:13:35.971+0000] {protocol.py:1210} WARNING - Server warning: Read 9118 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:12:59.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:13:35.974+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.974+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.974+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.974+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.974+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:35.975+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 11 bản ghi lên Kafka!
+[2026-04-07T08:13:53.770+0000] {protocol.py:1210} WARNING - Server warning: Read 9123 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:13:22.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:13:53.772+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:53.773+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:53.773+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:53.773+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:53.773+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:13:53.774+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 5 bản ghi lên Kafka!
+[2026-04-07T08:14:08.852+0000] {protocol.py:1210} WARNING - Server warning: Read 9133 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:13:42.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.858+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.859+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.859+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.859+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:08.860+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:14:26.686+0000] {protocol.py:1210} WARNING - Server warning: Read 9133 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:14:05.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:14:41.742+0000] {protocol.py:1210} WARNING - Server warning: Read 9139 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:14:05.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:14:41.745+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.746+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.746+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.746+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.746+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.746+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:41.747+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:14:59.564+0000] {protocol.py:1210} WARNING - Server warning: Read 9142 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:14:27.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:14:59.567+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:59.567+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:59.567+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:14:59.568+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 3 bản ghi lên Kafka!
+[2026-04-07T08:15:14.623+0000] {protocol.py:1210} WARNING - Server warning: Read 9161 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:14:47.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:15:14.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.633+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.633+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.633+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:14.634+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 19 bản ghi lên Kafka!
+[2026-04-07T08:15:32.441+0000] {protocol.py:1210} WARNING - Server warning: Read 9161 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:15:10.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:15:47.524+0000] {protocol.py:1210} WARNING - Server warning: Read 9172 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:15:10.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.528+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.529+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:15:47.529+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 11 bản ghi lên Kafka!
+[2026-04-07T08:16:05.398+0000] {protocol.py:1210} WARNING - Server warning: Read 9181 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:15:33.000000 AND  LIMIT 5000; token 9211833643158704453 (see tombstone_warn_threshold)
+[2026-04-07T08:16:05.409+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.413+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.414+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:05.416+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 9 bản ghi lên Kafka!
+[2026-04-07T08:16:20.496+0000] {protocol.py:1210} WARNING - Server warning: Read 9199 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:15:53.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:16:20.502+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.502+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.502+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.502+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.503+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.504+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.504+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.504+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.504+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:20.505+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 18 bản ghi lên Kafka!
+[2026-04-07T08:16:38.300+0000] {protocol.py:1210} WARNING - Server warning: Read 9199 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:16:16.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:16:53.370+0000] {protocol.py:1210} WARNING - Server warning: Read 9219 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:16:16.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.374+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.375+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:16:53.376+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 20 bản ghi lên Kafka!
+[2026-04-07T08:17:11.168+0000] {protocol.py:1210} WARNING - Server warning: Read 9224 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:16:39.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:17:11.171+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:11.171+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:11.172+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:11.172+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:11.172+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:11.172+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 5 bản ghi lên Kafka!
+[2026-04-07T08:17:26.235+0000] {protocol.py:1210} WARNING - Server warning: Read 9234 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:16:59.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:17:26.238+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.238+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.238+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.238+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.238+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:26.239+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:17:44.036+0000] {protocol.py:1210} WARNING - Server warning: Read 9234 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:17:22.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:17:59.107+0000] {protocol.py:1210} WARNING - Server warning: Read 9249 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:17:22.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:17:59.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:17:59.113+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 15 bản ghi lên Kafka!
+[2026-04-07T08:18:16.894+0000] {protocol.py:1210} WARNING - Server warning: Read 9261 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:17:44.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:18:16.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.904+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:16.905+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 12 bản ghi lên Kafka!
+[2026-04-07T08:18:32.054+0000] {protocol.py:1210} WARNING - Server warning: Read 9271 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:18:05.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:18:32.066+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.067+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.068+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.068+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.068+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.068+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.068+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.069+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.069+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.069+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:18:32.072+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:18:49.879+0000] {protocol.py:1210} WARNING - Server warning: Read 9271 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:18:27.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:19:04.943+0000] {protocol.py:1210} WARNING - Server warning: Read 9279 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:18:27.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:19:04.947+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.947+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.947+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.947+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.947+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.948+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.948+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.948+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:04.950+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 8 bản ghi lên Kafka!
+[2026-04-07T08:19:22.771+0000] {protocol.py:1210} WARNING - Server warning: Read 9291 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:18:50.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:19:22.778+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.778+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.779+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.780+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.780+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:22.780+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 12 bản ghi lên Kafka!
+[2026-04-07T08:19:37.847+0000] {protocol.py:1210} WARNING - Server warning: Read 9302 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:19:10.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:19:37.853+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.854+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:19:37.855+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 11 bản ghi lên Kafka!
+[2026-04-07T08:19:55.637+0000] {protocol.py:1210} WARNING - Server warning: Read 9302 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:19:33.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:20:10.714+0000] {protocol.py:1210} WARNING - Server warning: Read 9306 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:19:33.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:20:10.718+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:10.718+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:10.718+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:10.719+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:10.720+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 4 bản ghi lên Kafka!
+[2026-04-07T08:20:28.536+0000] {protocol.py:1210} WARNING - Server warning: Read 9320 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:19:56.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:20:28.543+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.544+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.545+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.545+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.545+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:28.547+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 14 bản ghi lên Kafka!
+[2026-04-07T08:20:43.608+0000] {protocol.py:1210} WARNING - Server warning: Read 9335 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:20:16.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:20:43.614+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.614+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.614+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.614+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.615+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:20:43.616+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 15 bản ghi lên Kafka!
+[2026-04-07T08:21:01.482+0000] {protocol.py:1210} WARNING - Server warning: Read 9335 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:20:39.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:21:16.550+0000] {protocol.py:1210} WARNING - Server warning: Read 9341 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:20:39.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:21:16.555+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.556+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.556+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.556+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.556+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.556+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:16.557+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:21:34.441+0000] {protocol.py:1210} WARNING - Server warning: Read 9346 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:21:02.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:21:34.448+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:34.449+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:34.449+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:34.450+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:34.450+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:34.451+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 5 bản ghi lên Kafka!
+[2026-04-07T08:21:49.516+0000] {protocol.py:1210} WARNING - Server warning: Read 9356 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:21:22.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:21:49.522+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.523+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.524+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.524+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.524+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:21:49.525+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:22:07.314+0000] {protocol.py:1210} WARNING - Server warning: Read 9356 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:21:44.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:22:22.402+0000] {protocol.py:1210} WARNING - Server warning: Read 9362 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:21:44.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:22:22.407+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.407+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.407+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.408+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.408+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.408+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:22.409+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:22:40.212+0000] {protocol.py:1210} WARNING - Server warning: Read 9365 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:22:07.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:22:40.217+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:40.218+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:40.218+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:40.219+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 3 bản ghi lên Kafka!
+[2026-04-07T08:22:55.302+0000] {protocol.py:1210} WARNING - Server warning: Read 9366 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:22:27.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:22:55.305+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:22:55.586+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 1 bản ghi lên Kafka!
+[2026-04-07T08:23:13.368+0000] {protocol.py:1210} WARNING - Server warning: Read 9381 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:22:50.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:23:13.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:13.373+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 15 bản ghi lên Kafka!
+[2026-04-07T08:23:28.427+0000] {protocol.py:1210} WARNING - Server warning: Read 9381 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:23:13.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:23:46.222+0000] {protocol.py:1210} WARNING - Server warning: Read 9399 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:23:13.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:23:46.230+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.231+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.231+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:23:46.234+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 18 bản ghi lên Kafka!
+[2026-04-07T08:24:01.359+0000] {protocol.py:1210} WARNING - Server warning: Read 9419 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:23:33.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:24:01.370+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.371+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.372+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.373+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.373+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.373+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:01.374+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 20 bản ghi lên Kafka!
+[2026-04-07T08:24:19.150+0000] {protocol.py:1210} WARNING - Server warning: Read 9425 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:23:56.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.154+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:19.155+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:24:34.219+0000] {protocol.py:1210} WARNING - Server warning: Read 9425 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:24:18.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:24:52.035+0000] {protocol.py:1210} WARNING - Server warning: Read 9438 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:24:18.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:24:52.041+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.041+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.042+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:24:52.043+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 13 bản ghi lên Kafka!
+[2026-04-07T08:25:07.107+0000] {protocol.py:1210} WARNING - Server warning: Read 9450 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:24:39.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.111+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.112+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:07.113+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 12 bản ghi lên Kafka!
+[2026-04-07T08:25:24.900+0000] {protocol.py:1210} WARNING - Server warning: Read 9459 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:25:01.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.903+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:24.904+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 9 bản ghi lên Kafka!
+[2026-04-07T08:25:39.970+0000] {protocol.py:1210} WARNING - Server warning: Read 9459 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:25:24.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:25:57.770+0000] {protocol.py:1210} WARNING - Server warning: Read 9474 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:25:24.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.775+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.776+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:25:57.777+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 15 bản ghi lên Kafka!
+[2026-04-07T08:26:12.831+0000] {protocol.py:1210} WARNING - Server warning: Read 9490 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:25:44.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.837+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.838+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:12.839+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 16 bản ghi lên Kafka!
+[2026-04-07T08:26:30.625+0000] {protocol.py:1210} WARNING - Server warning: Read 9503 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:26:07.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:26:30.632+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 13 bản ghi lên Kafka!
+[2026-04-07T08:26:45.685+0000] {protocol.py:1210} WARNING - Server warning: Read 9503 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:26:30.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:27:03.589+0000] {protocol.py:1210} WARNING - Server warning: Read 9511 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:26:30.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:27:03.599+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.600+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.603+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.603+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.603+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.604+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.604+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.604+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:03.605+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 8 bản ghi lên Kafka!
+[2026-04-07T08:27:18.668+0000] {protocol.py:1210} WARNING - Server warning: Read 9525 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:26:50.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.672+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.673+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:18.674+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 14 bản ghi lên Kafka!
+[2026-04-07T08:27:36.525+0000] {protocol.py:1210} WARNING - Server warning: Read 9527 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:27:13.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:27:36.533+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:36.533+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:27:36.535+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 2 bản ghi lên Kafka!
+[2026-04-07T08:27:51.592+0000] {protocol.py:1210} WARNING - Server warning: Read 9527 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:27:35.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:28:09.416+0000] {protocol.py:1210} WARNING - Server warning: Read 9537 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:27:35.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:28:09.419+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.420+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:09.421+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:28:24.515+0000] {protocol.py:1210} WARNING - Server warning: Read 9547 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:27:55.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.519+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.520+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.520+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.520+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.520+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:24.521+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:28:42.317+0000] {protocol.py:1210} WARNING - Server warning: Read 9563 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:28:18.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:28:42.322+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.322+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.322+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.322+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.323+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:28:42.324+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 16 bản ghi lên Kafka!
+[2026-04-07T08:28:57.381+0000] {protocol.py:1210} WARNING - Server warning: Read 9563 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:28:41.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:29:15.185+0000] {protocol.py:1210} WARNING - Server warning: Read 9569 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:28:41.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:29:15.189+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.189+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.189+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.189+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.190+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.190+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:15.191+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:29:30.269+0000] {protocol.py:1210} WARNING - Server warning: Read 9575 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:29:01.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:29:30.274+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.275+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.275+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.275+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.275+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.275+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:30.277+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-07T08:29:48.181+0000] {protocol.py:1210} WARNING - Server warning: Read 9579 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:29:24.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:29:48.191+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:48.191+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:48.191+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:48.191+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:29:48.192+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 4 bản ghi lên Kafka!
+[2026-04-07T08:30:03.328+0000] {protocol.py:1210} WARNING - Server warning: Read 9579 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:29:47.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:30:21.088+0000] {protocol.py:1210} WARNING - Server warning: Read 9596 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:29:47.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:30:21.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.093+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.094+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.095+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.095+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.095+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.095+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.095+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:21.097+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 17 bản ghi lên Kafka!
+[2026-04-07T08:30:36.325+0000] {protocol.py:1210} WARNING - Server warning: Read 9606 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:30:07.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:30:36.341+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.347+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.350+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.351+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.351+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.356+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.357+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.357+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.357+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.357+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:36.365+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 10 bản ghi lên Kafka!
+[2026-04-07T08:30:40.200+0000] {job.py:229} INFO - Heartbeat recovered after 12.44 seconds
+[2026-04-07T08:30:54.160+0000] {protocol.py:1210} WARNING - Server warning: Read 9607 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:30:29.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:30:54.166+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:30:54.167+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 1 bản ghi lên Kafka!
+[2026-04-07T08:31:09.237+0000] {protocol.py:1210} WARNING - Server warning: Read 9607 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:30:52.000000 AND  LIMIT 5000; token 9217923431544962222 (see tombstone_warn_threshold)
+[2026-04-07T08:31:27.038+0000] {protocol.py:1210} WARNING - Server warning: Read 9610 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:30:52.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:31:27.044+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:27.044+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:27.044+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:27.046+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 3 bản ghi lên Kafka!
+[2026-04-07T08:31:42.117+0000] {protocol.py:1210} WARNING - Server warning: Read 9611 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:31:12.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:31:42.120+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:42.121+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 1 bản ghi lên Kafka!
+[2026-04-07T08:31:59.893+0000] {protocol.py:1210} WARNING - Server warning: Read 9622 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:31:35.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:31:59.897+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.897+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:31:59.900+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 11 bản ghi lên Kafka!
+[2026-04-07T08:32:14.980+0000] {protocol.py:1210} WARNING - Server warning: Read 9622 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:31:58.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:32:32.819+0000] {protocol.py:1210} WARNING - Server warning: Read 9635 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:31:58.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:32:32.824+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.825+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:32.826+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 13 bản ghi lên Kafka!
+[2026-04-07T08:32:47.895+0000] {protocol.py:1210} WARNING - Server warning: Read 9654 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:32:18.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.898+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.899+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:32:47.900+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 19 bản ghi lên Kafka!
+[2026-04-07T08:33:05.708+0000] {protocol.py:1210} WARNING - Server warning: Read 9672 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:32:41.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:33:05.710+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.710+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.710+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.711+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:05.712+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 18 bản ghi lên Kafka!
+[2026-04-07T08:33:20.779+0000] {protocol.py:1210} WARNING - Server warning: Read 9672 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:33:04.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:33:38.574+0000] {protocol.py:1210} WARNING - Server warning: Read 9675 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:33:04.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:33:38.579+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:38.580+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:38.580+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:38.580+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 3 bản ghi lên Kafka!
+[2026-04-07T08:33:53.642+0000] {protocol.py:1210} WARNING - Server warning: Read 9695 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:33:24.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:33:53.645+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.645+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.645+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.645+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.645+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.646+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.647+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.647+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:33:53.648+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 20 bản ghi lên Kafka!
+[2026-04-07T08:34:11.430+0000] {protocol.py:1210} WARNING - Server warning: Read 9712 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:33:46.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:34:11.433+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.433+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.434+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.435+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.435+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.435+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.435+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.435+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:11.436+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 17 bản ghi lên Kafka!
+[2026-04-07T08:34:26.498+0000] {protocol.py:1210} WARNING - Server warning: Read 9712 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:34:09.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:34:44.331+0000] {protocol.py:1210} WARNING - Server warning: Read 9721 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:34:09.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:34:44.334+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.335+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.336+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:44.337+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 9 bản ghi lên Kafka!
+[2026-04-07T08:34:59.406+0000] {protocol.py:1210} WARNING - Server warning: Read 9732 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:34:29.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:34:59.409+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.409+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.410+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:34:59.411+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 11 bản ghi lên Kafka!
+[2026-04-07T08:35:17.217+0000] {protocol.py:1210} WARNING - Server warning: Read 9733 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:34:52.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:35:17.221+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:17.222+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 1 bản ghi lên Kafka!
+[2026-04-07T08:35:32.390+0000] {protocol.py:1210} WARNING - Server warning: Read 9733 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:35:15.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:35:50.197+0000] {protocol.py:1210} WARNING - Server warning: Read 9753 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:35:15.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:35:50.199+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.199+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.200+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.201+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.201+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:35:50.201+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 20 bản ghi lên Kafka!
+[2026-04-07T08:36:05.284+0000] {protocol.py:1210} WARNING - Server warning: Read 9757 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:35:35.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:36:05.289+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:05.289+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:05.290+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:05.290+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:05.291+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 4 bản ghi lên Kafka!
+[2026-04-07T08:36:23.085+0000] {protocol.py:1210} WARNING - Server warning: Read 9765 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:35:58.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:36:23.088+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.088+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.089+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:36:23.090+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 8 bản ghi lên Kafka!
+[2026-04-07T08:36:38.162+0000] {protocol.py:1210} WARNING - Server warning: Read 9765 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:36:20.000000 AND  LIMIT 5000; token 9221989505033097363 (see tombstone_warn_threshold)
+[2026-04-07T08:36:52.702+0000] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-07T08:36:52.731+0000] {process_utils.py:132} INFO - Sending 15 to group 6220. PIDs of all processes in the group: [6220]
+[2026-04-07T08:36:52.734+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 6220
+[2026-04-07T08:36:52.738+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-04-07T08:36:52.777+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.8/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/scheduler_job_runner.py", line 990, in _execute
+    executor.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 392, in start
+    self.impl.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 330, in start
+    worker.start()
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/popen_fork.py", line 75, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 80, in run
+    return super().run()
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 211, in do_work
+    self.execute_work(key=key, command=command)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 100, in execute_work
+    state = self._execute_work_in_fork(command)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 142, in _execute_work_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.8/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/***/scripts/ingestion/kafka_cdc_producer.py", line 57, in cdc_polling_consumer
+    time.sleep(15)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2026-04-07T08:36:52.877+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/ingestion/kafka_cdc_producer.py", line 57, in cdc_polling_consumer
+    time.sleep(15)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-04-07T08:36:52.930+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=1_continuous_services_bear_mode, task_id=service_kafka_cdc, run_id=manual__2026-04-07T08:08:46.057121+00:00, execution_date=20260407T080846, start_date=20260407T081050, end_date=20260407T083652
+[2026-04-07T08:36:53.088+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-04-07T08:36:53.182+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=6220, status='terminated', exitcode=2, started='08:10:50') (6220) terminated with exit code 2
+[2026-04-07T08:36:53.221+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 143
+[2026-04-07T08:36:53.268+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics

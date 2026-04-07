@@ -1,0 +1,493 @@
+[2026-04-05T09:03:17.045+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-05T09:03:17.072+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_kafka_cdc manual__2026-04-05T08:56:56.642789+00:00 [queued]>
+[2026-04-05T09:03:17.096+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_kafka_cdc manual__2026-04-05T08:56:56.642789+00:00 [queued]>
+[2026-04-05T09:03:17.097+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-04-05T09:03:17.121+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): run_kafka_cdc> on 2026-04-05 08:56:56.642789+00:00
+[2026-04-05T09:03:17.142+0000] {standard_task_runner.py:72} INFO - Started process 525 to run task
+[2026-04-05T09:03:17.241+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'recruitment_cdc_cassandra_to_mysql', 'run_kafka_cdc', 'manual__2026-04-05T08:56:56.642789+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpcsme1w21']
+[2026-04-05T09:03:17.265+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask run_kafka_cdc
+[2026-04-05T09:03:17.480+0000] {task_command.py:467} INFO - Running <TaskInstance: recruitment_cdc_cassandra_to_mysql.run_kafka_cdc manual__2026-04-05T08:56:56.642789+00:00 [running]> on host 40f786deaaea
+[2026-04-05T09:03:17.737+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='recruitment_cdc_cassandra_to_mysql' AIRFLOW_CTX_TASK_ID='run_kafka_cdc' AIRFLOW_CTX_EXECUTION_DATE='2026-04-05T08:56:56.642789+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-05T08:56:56.642789+00:00'
+[2026-04-05T09:03:17.739+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-05T09:03:17.862+0000] {cluster.py:1324} WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['cassandra'], lbp = None)
+[2026-04-05T09:03:17.874+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 66 to 65 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T09:03:17.876+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 65 to 5 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T09:03:17.883+0000] {connection.py:1290} ERROR - Closing connection <AsyncoreConnection(130302923783760) 172.19.0.6:9042> due to protocol error: Error from server: code=000a [Protocol error] message="Beta version of the protocol used (5/v5-beta), but USE_BETA flag is unset"
+[2026-04-05T09:03:17.884+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 5 to 4 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T09:03:17.889+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-05T09:03:17.903+0000] {policies.py:289} INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '172.19.0.6:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+[2026-04-05T09:03:17.955+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-05T09:03:18.025+0000] {logging_mixin.py:190} INFO - 🚀 CDC Polling started at 2026-04-05 09:02:17.968099
+[2026-04-05T09:03:18.646+0000] {protocol.py:1210} WARNING - Server warning: Read 7613 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:02:17.968099 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:03:19.451+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.451+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.451+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.452+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.453+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.453+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.453+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.453+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.454+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.455+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.456+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.457+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.457+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.457+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.458+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.458+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.458+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.460+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.460+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.460+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.461+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.462+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.463+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.464+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.464+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.464+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.464+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.464+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.465+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.466+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.466+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.467+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.467+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.467+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.467+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.467+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.468+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.469+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.470+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.470+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.470+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.470+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.470+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:19.487+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 84 bản ghi lên Kafka!
+[2026-04-05T09:03:37.877+0000] {protocol.py:1210} WARNING - Server warning: Read 7619 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:03:16.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:03:37.880+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.881+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.881+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.881+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.881+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.881+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:37.883+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-05T09:03:53.023+0000] {protocol.py:1210} WARNING - Server warning: Read 7639 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:03:22.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:03:53.028+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.028+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.028+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.029+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.030+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:03:53.032+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 20 bản ghi lên Kafka!
+[2026-04-05T09:04:11.228+0000] {protocol.py:1210} WARNING - Server warning: Read 7675 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:03:45.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.232+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.233+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.234+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.235+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:11.236+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 36 bản ghi lên Kafka!
+[2026-04-05T09:04:26.297+0000] {protocol.py:1210} WARNING - Server warning: Read 7691 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:04:08.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:26.302+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 16 bản ghi lên Kafka!
+[2026-04-05T09:04:44.700+0000] {protocol.py:1210} WARNING - Server warning: Read 7700 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:04:22.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:04:44.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:44.706+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 9 bản ghi lên Kafka!
+[2026-04-05T09:04:59.784+0000] {protocol.py:1210} WARNING - Server warning: Read 7723 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:04:28.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:04:59.787+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.787+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.787+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.787+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.787+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.788+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.789+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.789+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:04:59.789+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 23 bản ghi lên Kafka!
+[2026-04-05T09:05:18.048+0000] {protocol.py:1210} WARNING - Server warning: Read 7745 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:04:51.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:05:18.052+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.053+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.054+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:18.055+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 22 bản ghi lên Kafka!
+[2026-04-05T09:05:33.207+0000] {protocol.py:1210} WARNING - Server warning: Read 7759 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:05:15.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:05:33.213+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.213+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.214+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.215+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.215+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.215+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:33.217+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 14 bản ghi lên Kafka!
+[2026-04-05T09:05:51.510+0000] {protocol.py:1210} WARNING - Server warning: Read 7763 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:05:29.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:05:51.514+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:51.515+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:51.515+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:51.515+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:05:51.516+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 4 bản ghi lên Kafka!
+[2026-04-05T09:06:06.590+0000] {protocol.py:1210} WARNING - Server warning: Read 7790 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:05:35.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:06:06.594+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.594+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.594+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.594+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.595+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.596+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:06.597+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 27 bản ghi lên Kafka!
+[2026-04-05T09:06:24.793+0000] {protocol.py:1210} WARNING - Server warning: Read 7833 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:05:58.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:06:24.800+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.800+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.800+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.801+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.802+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.803+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:24.805+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 43 bản ghi lên Kafka!
+[2026-04-05T09:06:39.870+0000] {protocol.py:1210} WARNING - Server warning: Read 7851 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:06:21.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:06:39.877+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.877+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.878+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.879+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.879+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.879+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.879+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:39.880+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 18 bản ghi lên Kafka!
+[2026-04-05T09:06:58.221+0000] {protocol.py:1210} WARNING - Server warning: Read 7857 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:06:35.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:06:58.225+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.226+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.226+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.226+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.226+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.226+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:06:58.227+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 6 bản ghi lên Kafka!
+[2026-04-05T09:07:13.292+0000] {protocol.py:1210} WARNING - Server warning: Read 7893 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:06:41.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:07:13.296+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.296+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.297+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.298+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.299+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.300+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.301+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:13.302+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 36 bản ghi lên Kafka!
+[2026-04-05T09:07:31.623+0000] {protocol.py:1210} WARNING - Server warning: Read 7939 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:07:05.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:07:31.627+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.628+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.629+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.630+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.631+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.632+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:31.633+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 46 bản ghi lên Kafka!
+[2026-04-05T09:07:46.697+0000] {protocol.py:1210} WARNING - Server warning: Read 7967 live rows and 77879 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-05 09:07:28.000000 AND  LIMIT 5000; token 9221182101044540640 (see tombstone_warn_threshold)
+[2026-04-05T09:07:46.702+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.702+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.702+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.703+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.704+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.705+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.706+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.706+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.706+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-05T09:07:46.707+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 28 bản ghi lên Kafka!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

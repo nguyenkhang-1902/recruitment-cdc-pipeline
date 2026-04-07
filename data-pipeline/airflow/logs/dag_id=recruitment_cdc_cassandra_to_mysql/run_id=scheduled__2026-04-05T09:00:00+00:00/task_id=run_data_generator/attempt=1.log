@@ -1,0 +1,901 @@
+[2026-04-05T10:00:03.198+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-05T10:00:03.220+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_data_generator scheduled__2026-04-05T09:00:00+00:00 [queued]>
+[2026-04-05T10:00:03.228+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: recruitment_cdc_cassandra_to_mysql.run_data_generator scheduled__2026-04-05T09:00:00+00:00 [queued]>
+[2026-04-05T10:00:03.229+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-04-05T10:00:03.249+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): run_data_generator> on 2026-04-05 09:00:00+00:00
+[2026-04-05T10:00:03.257+0000] {standard_task_runner.py:72} INFO - Started process 723 to run task
+[2026-04-05T10:00:03.261+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'recruitment_cdc_cassandra_to_mysql', 'run_data_generator', 'scheduled__2026-04-05T09:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/main_pipeline_dag.py', '--cfg-path', '/tmp/tmpeawrtlm8']
+[2026-04-05T10:00:03.265+0000] {standard_task_runner.py:105} INFO - Job 23: Subtask run_data_generator
+[2026-04-05T10:00:03.331+0000] {task_command.py:467} INFO - Running <TaskInstance: recruitment_cdc_cassandra_to_mysql.run_data_generator scheduled__2026-04-05T09:00:00+00:00 [running]> on host c79c22db6b22
+[2026-04-05T10:00:03.486+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='recruitment_cdc_cassandra_to_mysql' AIRFLOW_CTX_TASK_ID='run_data_generator' AIRFLOW_CTX_EXECUTION_DATE='2026-04-05T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-05T09:00:00+00:00'
+[2026-04-05T10:00:03.489+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-05T10:00:03.524+0000] {logging_mixin.py:190} INFO - 🚀 Khởi tạo kết nối hệ thống...
+[2026-04-05T10:00:04.192+0000] {cluster.py:1324} WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['cassandra'], lbp = None)
+[2026-04-05T10:00:04.197+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 66 to 65 for 172.19.0.5:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T10:00:04.198+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 65 to 5 for 172.19.0.5:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T10:00:04.199+0000] {connection.py:1290} ERROR - Closing connection <AsyncoreConnection(124127580616160) 172.19.0.5:9042> due to protocol error: Error from server: code=000a [Protocol error] message="Beta version of the protocol used (5/v5-beta), but USE_BETA flag is unset"
+[2026-04-05T10:00:04.199+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 5 to 4 for 172.19.0.5:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-05T10:00:04.200+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-05T10:00:04.204+0000] {policies.py:289} INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '172.19.0.5:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+[2026-04-05T10:00:04.219+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-05T10:00:04.222+0000] {logging_mixin.py:190} INFO - 🚀 Bắt đầu tạo dữ liệu giả...
+[2026-04-05T10:00:04.275+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 278 | Track: click | TS: 2026-04-05 10:00:04
+[2026-04-05T10:00:04.277+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1131 | Track: click | TS: 2026-04-05 10:00:04
+[2026-04-05T10:00:04.279+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1785 | Track: click | TS: 2026-04-05 10:00:04
+[2026-04-05T10:00:27.334+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 742 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.337+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1134 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.339+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 961 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.341+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 100 | Track: unqualified | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.343+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1220 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.347+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1995 | Track: conversion | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.350+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 94 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.352+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 453 | Track: qualified | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.354+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 774 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.356+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1399 | Track: qualified | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.358+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1142 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:27.361+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1899 | Track: click | TS: 2026-04-05 10:00:27
+[2026-04-05T10:00:50.354+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1104 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.357+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2072 | Track: conversion | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.359+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 644 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.361+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 237 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.363+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 251 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.366+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1075 | Track: unqualified | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.368+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 378 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.371+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1623 | Track: conversion | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.374+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1095 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.376+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1490 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.380+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 911 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.382+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 118 | Track: conversion | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.387+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1837 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.390+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 648 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.394+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 349 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.397+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 488 | Track: unqualified | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.400+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1572 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:00:50.403+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1960 | Track: click | TS: 2026-04-05 10:00:50
+[2026-04-05T10:01:10.435+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1410 | Track: click | TS: 2026-04-05 10:01:10
+[2026-04-05T10:01:33.403+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 101 | Track: qualified | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.405+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 66 | Track: conversion | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.406+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 932 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.407+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 90 | Track: unqualified | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.408+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1688 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.408+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 416 | Track: conversion | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.409+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 985 | Track: qualified | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.410+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 133 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.411+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1072 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.412+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1558 | Track: conversion | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.413+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 614 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.414+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 411 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.415+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1694 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:33.415+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1153 | Track: click | TS: 2026-04-05 10:01:33
+[2026-04-05T10:01:56.528+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1194 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.530+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 659 | Track: qualified | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.531+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 125 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.533+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1766 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.534+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 842 | Track: unqualified | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.535+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1086 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.536+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1649 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.537+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 725 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.538+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 675 | Track: conversion | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.539+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2017 | Track: qualified | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.540+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2040 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.541+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1863 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.542+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 856 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.543+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1420 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.544+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 198 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:01:56.545+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1081 | Track: click | TS: 2026-04-05 10:01:56
+[2026-04-05T10:02:16.564+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 807 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.567+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 468 | Track: qualified | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.570+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1549 | Track: conversion | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.573+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1620 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.576+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1962 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.578+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1625 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.580+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1290 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.582+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1280 | Track: conversion | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.583+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1215 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.585+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 196 | Track: conversion | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.586+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1656 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.588+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1849 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.589+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1180 | Track: click | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:16.591+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1207 | Track: conversion | TS: 2026-04-05 10:02:16
+[2026-04-05T10:02:39.683+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1356 | Track: qualified | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.684+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1148 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.685+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1926 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.686+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1117 | Track: unqualified | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.687+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1354 | Track: unqualified | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.688+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1543 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.689+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 871 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.690+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 363 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.690+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 239 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.691+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 549 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.692+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 374 | Track: qualified | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.693+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 851 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.693+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 346 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.694+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 749 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.695+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1289 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.696+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1079 | Track: unqualified | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.697+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 356 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:02:39.697+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1416 | Track: click | TS: 2026-04-05 10:02:39
+[2026-04-05T10:03:02.746+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1194 | Track: unqualified | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.748+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1006 | Track: click | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.751+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 777 | Track: qualified | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.754+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1951 | Track: click | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.757+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1421 | Track: qualified | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.758+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 753 | Track: click | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:02.760+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1454 | Track: click | TS: 2026-04-05 10:03:02
+[2026-04-05T10:03:22.794+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 670 | Track: qualified | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.796+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1150 | Track: unqualified | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.797+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 502 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.798+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 659 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.800+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 562 | Track: unqualified | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.803+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1595 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.805+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1651 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.807+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1794 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.808+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1018 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.809+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 910 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.810+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1786 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.811+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 641 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.812+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 721 | Track: click | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:22.813+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 962 | Track: unqualified | TS: 2026-04-05 10:03:22
+[2026-04-05T10:03:45.828+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 706 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.830+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 199 | Track: qualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.832+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1846 | Track: qualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.834+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1379 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.837+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1431 | Track: qualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.839+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 933 | Track: conversion | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.842+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1539 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.845+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 124 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.847+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 948 | Track: unqualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.849+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 112 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.851+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1006 | Track: qualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.852+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 889 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.854+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1629 | Track: qualified | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.856+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 705 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.857+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1267 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.859+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1879 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.860+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 321 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.861+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 707 | Track: click | TS: 2026-04-05 10:03:45
+[2026-04-05T10:03:45.862+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 527 | Track: conversion | TS: 2026-04-05 10:03:45
+[2026-04-05T10:04:08.978+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2017 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.980+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 909 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.981+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 158 | Track: qualified | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.982+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 255 | Track: conversion | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.983+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 876 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.983+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1676 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.984+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1573 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.985+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1121 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.986+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 371 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.987+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1748 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.988+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 767 | Track: unqualified | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.989+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1794 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:08.990+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1285 | Track: click | TS: 2026-04-05 10:04:08
+[2026-04-05T10:04:29.033+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1710 | Track: unqualified | TS: 2026-04-05 10:04:29
+[2026-04-05T10:04:52.160+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1092 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.161+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 105 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.163+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1001 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.164+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 462 | Track: qualified | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.165+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1497 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.166+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 435 | Track: unqualified | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.167+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1028 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.168+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1460 | Track: conversion | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.169+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1394 | Track: conversion | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.169+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 625 | Track: unqualified | TS: 2026-04-05 10:04:52
+[2026-04-05T10:04:52.170+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 148 | Track: click | TS: 2026-04-05 10:04:52
+[2026-04-05T10:05:15.376+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1263 | Track: conversion | TS: 2026-04-05 10:05:15
+[2026-04-05T10:05:15.378+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1184 | Track: click | TS: 2026-04-05 10:05:15
+[2026-04-05T10:05:15.379+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 920 | Track: click | TS: 2026-04-05 10:05:15
+[2026-04-05T10:05:35.396+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 391 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.397+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 481 | Track: conversion | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.398+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 503 | Track: qualified | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.399+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 527 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.399+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1149 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.400+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2005 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.401+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 710 | Track: qualified | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.402+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 562 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.402+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1559 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.404+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 978 | Track: qualified | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.406+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 973 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.408+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 282 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.409+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1609 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.410+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1725 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.411+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 327 | Track: conversion | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.412+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 518 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:35.413+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1829 | Track: click | TS: 2026-04-05 10:05:35
+[2026-04-05T10:05:58.453+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 156 | Track: conversion | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.455+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 961 | Track: conversion | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.456+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2014 | Track: click | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.458+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1678 | Track: conversion | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.460+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 171 | Track: qualified | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.462+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 532 | Track: click | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.466+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 159 | Track: click | TS: 2026-04-05 10:05:58
+[2026-04-05T10:05:58.468+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 230 | Track: click | TS: 2026-04-05 10:05:58
+[2026-04-05T10:06:21.510+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1644 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.512+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1966 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.513+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 759 | Track: qualified | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.514+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1903 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.517+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 329 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.519+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2055 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.520+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 950 | Track: conversion | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.521+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1842 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.522+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 920 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.523+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1990 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.525+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1864 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.527+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1259 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.529+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 878 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.531+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 336 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.533+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 342 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.535+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1602 | Track: conversion | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.536+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1260 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.538+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 959 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:21.540+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 317 | Track: click | TS: 2026-04-05 10:06:21
+[2026-04-05T10:06:41.569+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 678 | Track: click | TS: 2026-04-05 10:06:41
+[2026-04-05T10:06:41.573+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 492 | Track: click | TS: 2026-04-05 10:06:41
+[2026-04-05T10:06:41.575+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2032 | Track: unqualified | TS: 2026-04-05 10:06:41
+[2026-04-05T10:06:41.578+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1783 | Track: conversion | TS: 2026-04-05 10:06:41
+[2026-04-05T10:07:04.677+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1008 | Track: unqualified | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.679+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1774 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.680+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1997 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.681+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 464 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.681+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 873 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.682+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 148 | Track: unqualified | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.683+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1160 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.684+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1623 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.685+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1597 | Track: unqualified | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.685+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1989 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.686+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 427 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.687+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1696 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.688+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 398 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.689+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 645 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.690+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 512 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:04.691+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 475 | Track: click | TS: 2026-04-05 10:07:04
+[2026-04-05T10:07:27.840+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1281 | Track: qualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.843+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1386 | Track: conversion | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.844+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 757 | Track: unqualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.846+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1571 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.849+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1102 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.851+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 459 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.853+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 997 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.855+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1062 | Track: unqualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.857+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 135 | Track: conversion | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.860+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 389 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.862+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 878 | Track: qualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.865+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1450 | Track: click | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.866+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 458 | Track: qualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.869+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1410 | Track: unqualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:27.870+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 997 | Track: unqualified | TS: 2026-04-05 10:07:27
+[2026-04-05T10:07:47.900+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1443 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.901+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1491 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.902+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1177 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.903+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 41 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.904+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1820 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.906+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1915 | Track: click | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.909+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 432 | Track: unqualified | TS: 2026-04-05 10:07:47
+[2026-04-05T10:07:47.910+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1980 | Track: conversion | TS: 2026-04-05 10:07:47
+[2026-04-05T10:08:11.111+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1353 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.113+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1793 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.118+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1954 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.121+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1774 | Track: conversion | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.123+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 694 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.124+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 322 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.126+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2027 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.128+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1099 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.130+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1905 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.132+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 908 | Track: qualified | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.134+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 570 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.136+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1933 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:11.138+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1075 | Track: click | TS: 2026-04-05 10:08:11
+[2026-04-05T10:08:34.252+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 244 | Track: qualified | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.253+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 193 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.255+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1856 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.258+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 471 | Track: unqualified | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.259+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1154 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.260+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1155 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.262+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1962 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.263+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 703 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.264+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1597 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.265+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1579 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.266+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1133 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.266+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1097 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.267+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1804 | Track: conversion | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.269+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 765 | Track: click | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:34.270+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 642 | Track: qualified | TS: 2026-04-05 10:08:34
+[2026-04-05T10:08:54.288+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1625 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:08:54.290+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1001 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:08:54.291+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 350 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:08:54.292+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1203 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:08:54.293+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1008 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:08:54.294+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1491 | Track: click | TS: 2026-04-05 10:08:54
+[2026-04-05T10:09:17.414+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1157 | Track: conversion | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.416+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 348 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.417+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1794 | Track: conversion | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.417+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1825 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.418+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 456 | Track: unqualified | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.419+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1977 | Track: unqualified | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.420+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 540 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.421+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 566 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.422+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 726 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.423+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 52 | Track: conversion | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:17.424+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1567 | Track: click | TS: 2026-04-05 10:09:17
+[2026-04-05T10:09:40.649+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 83 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.650+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 318 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.651+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1888 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.652+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 691 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.653+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1351 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.653+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 949 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.654+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 408 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.656+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 146 | Track: conversion | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.657+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1296 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.658+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 107 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.659+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1200 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.660+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2043 | Track: click | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.661+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1123 | Track: unqualified | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.662+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1159 | Track: qualified | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.663+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1666 | Track: conversion | TS: 2026-04-05 10:09:40
+[2026-04-05T10:09:40.664+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1435 | Track: conversion | TS: 2026-04-05 10:09:40
+[2026-04-05T10:10:00.699+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 845 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.700+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1491 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.701+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 128 | Track: conversion | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.702+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 248 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.703+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1747 | Track: conversion | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.703+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1252 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.704+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 986 | Track: qualified | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.705+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2015 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.706+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 526 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.707+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1444 | Track: unqualified | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.707+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1058 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.708+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 526 | Track: qualified | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:00.709+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1228 | Track: click | TS: 2026-04-05 10:10:00
+[2026-04-05T10:10:23.762+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1223 | Track: click | TS: 2026-04-05 10:10:23
+[2026-04-05T10:10:23.763+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1573 | Track: click | TS: 2026-04-05 10:10:23
+[2026-04-05T10:10:46.821+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1610 | Track: qualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.823+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 881 | Track: unqualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.824+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 738 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.826+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 402 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.827+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1573 | Track: unqualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.829+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1861 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.831+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 310 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.832+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2058 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.834+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 851 | Track: unqualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.835+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1606 | Track: conversion | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.837+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1913 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.839+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1639 | Track: qualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.842+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1313 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.845+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1460 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.847+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 583 | Track: conversion | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.849+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1930 | Track: unqualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.851+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1192 | Track: click | TS: 2026-04-05 10:10:46
+[2026-04-05T10:10:46.853+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 873 | Track: unqualified | TS: 2026-04-05 10:10:46
+[2026-04-05T10:11:06.876+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 307 | Track: conversion | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.877+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 592 | Track: conversion | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.878+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 266 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.879+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1301 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.880+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 100 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.881+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 600 | Track: conversion | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.881+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1791 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.882+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 835 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.883+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1846 | Track: unqualified | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.884+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 178 | Track: qualified | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.885+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1331 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:06.885+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1669 | Track: click | TS: 2026-04-05 10:11:06
+[2026-04-05T10:11:30.013+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2051 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.014+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 494 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.015+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 922 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.016+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 48 | Track: conversion | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.017+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 687 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.018+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 307 | Track: qualified | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.019+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1550 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.020+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1071 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:30.021+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 228 | Track: click | TS: 2026-04-05 10:11:30
+[2026-04-05T10:11:53.110+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2020 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.111+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 581 | Track: conversion | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.112+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 58 | Track: conversion | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.113+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 668 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.114+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1971 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.115+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 449 | Track: unqualified | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.116+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1387 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.117+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 224 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.117+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 321 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.118+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 779 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.119+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1789 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.120+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 975 | Track: qualified | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.121+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 684 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.122+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 446 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.123+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 631 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.123+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 279 | Track: unqualified | TS: 2026-04-05 10:11:53
+[2026-04-05T10:11:53.124+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 719 | Track: click | TS: 2026-04-05 10:11:53
+[2026-04-05T10:12:13.159+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 618 | Track: click | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:13.161+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 319 | Track: click | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:13.163+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 314 | Track: unqualified | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:13.165+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 189 | Track: click | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:13.166+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1434 | Track: click | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:13.168+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1695 | Track: unqualified | TS: 2026-04-05 10:12:13
+[2026-04-05T10:12:36.255+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1311 | Track: click | TS: 2026-04-05 10:12:36
+[2026-04-05T10:12:36.257+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 783 | Track: click | TS: 2026-04-05 10:12:36
+[2026-04-05T10:12:59.329+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 300 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.330+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 345 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.331+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 365 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.332+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 918 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.333+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 207 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.334+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 506 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.335+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1526 | Track: unqualified | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.339+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 336 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.341+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 463 | Track: qualified | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.342+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 845 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.343+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1546 | Track: qualified | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.344+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 816 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.345+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 377 | Track: qualified | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.346+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1817 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.347+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 665 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.348+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 538 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.349+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1359 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.350+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1775 | Track: unqualified | TS: 2026-04-05 10:12:59
+[2026-04-05T10:12:59.351+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1425 | Track: click | TS: 2026-04-05 10:12:59
+[2026-04-05T10:13:19.382+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 778 | Track: unqualified | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.383+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 701 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.384+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 54 | Track: qualified | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.385+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 373 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.385+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1410 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.386+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 858 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.387+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2055 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.388+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1499 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.388+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 977 | Track: qualified | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.389+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1460 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.390+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1571 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:19.390+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 647 | Track: click | TS: 2026-04-05 10:13:19
+[2026-04-05T10:13:42.496+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1207 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.497+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1293 | Track: conversion | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.499+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1910 | Track: qualified | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.500+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1801 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.501+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1907 | Track: unqualified | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.502+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 991 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.503+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 347 | Track: conversion | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.504+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1333 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.505+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1844 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.506+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1407 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.507+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 414 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.508+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1559 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:13:42.509+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 364 | Track: click | TS: 2026-04-05 10:13:42
+[2026-04-05T10:14:05.615+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 926 | Track: qualified | TS: 2026-04-05 10:14:05
+[2026-04-05T10:14:05.617+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 98 | Track: click | TS: 2026-04-05 10:14:05
+[2026-04-05T10:14:05.619+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 967 | Track: click | TS: 2026-04-05 10:14:05
+[2026-04-05T10:14:25.657+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1533 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.659+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1439 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.660+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 551 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.661+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 989 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.662+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 412 | Track: conversion | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.663+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1925 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.664+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 213 | Track: conversion | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.664+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 704 | Track: qualified | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.665+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1406 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.666+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 908 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.668+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 726 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:25.670+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1208 | Track: click | TS: 2026-04-05 10:14:25
+[2026-04-05T10:14:48.800+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1542 | Track: click | TS: 2026-04-05 10:14:48
+[2026-04-05T10:14:48.801+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 395 | Track: conversion | TS: 2026-04-05 10:14:48
+[2026-04-05T10:14:48.802+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1876 | Track: conversion | TS: 2026-04-05 10:14:48
+[2026-04-05T10:14:48.803+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 468 | Track: unqualified | TS: 2026-04-05 10:14:48
+[2026-04-05T10:15:11.823+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1119 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.826+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 265 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.827+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 495 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.829+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1288 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.830+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 914 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.831+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2026 | Track: conversion | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:11.832+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1985 | Track: click | TS: 2026-04-05 10:15:11
+[2026-04-05T10:15:31.866+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1335 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.867+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 74 | Track: unqualified | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.868+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1805 | Track: conversion | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.869+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1384 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.870+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1189 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.870+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 93 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.871+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 292 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.872+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1709 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.873+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 180 | Track: unqualified | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.874+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1747 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.875+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1730 | Track: conversion | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.876+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2050 | Track: qualified | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.877+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1605 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.877+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 224 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.878+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 187 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.880+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 412 | Track: unqualified | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.883+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 685 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.886+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 334 | Track: unqualified | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:31.888+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1692 | Track: click | TS: 2026-04-05 10:15:31
+[2026-04-05T10:15:54.988+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1844 | Track: unqualified | TS: 2026-04-05 10:15:54
+[2026-04-05T10:15:54.989+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1001 | Track: click | TS: 2026-04-05 10:15:54
+[2026-04-05T10:15:54.991+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1789 | Track: click | TS: 2026-04-05 10:15:54
+[2026-04-05T10:16:18.077+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1347 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.081+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 660 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.084+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 620 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.086+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1942 | Track: qualified | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.087+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 376 | Track: qualified | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.089+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2058 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.091+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 768 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.093+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1813 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.095+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 687 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:18.097+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1850 | Track: click | TS: 2026-04-05 10:16:18
+[2026-04-05T10:16:38.128+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1158 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.129+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 749 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.130+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 142 | Track: conversion | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.131+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1580 | Track: unqualified | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.131+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 764 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.132+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1985 | Track: unqualified | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.133+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 846 | Track: unqualified | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.134+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 103 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.135+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1760 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.135+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 506 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.136+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1271 | Track: unqualified | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.137+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1452 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.138+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 93 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.138+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 887 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.139+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 749 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.140+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 985 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:16:38.140+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1004 | Track: click | TS: 2026-04-05 10:16:38
+[2026-04-05T10:17:01.241+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1175 | Track: conversion | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:01.242+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1897 | Track: click | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:01.244+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 923 | Track: click | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:01.244+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 673 | Track: unqualified | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:01.245+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1082 | Track: click | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:01.246+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 402 | Track: qualified | TS: 2026-04-05 10:17:01
+[2026-04-05T10:17:24.356+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1922 | Track: unqualified | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.359+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 699 | Track: qualified | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.360+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 486 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.362+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1743 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.363+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 242 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.365+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 265 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.366+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 715 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.367+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1150 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.368+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 783 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.369+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 988 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.370+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1060 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.371+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1937 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.373+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 552 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.374+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2042 | Track: unqualified | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.376+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1724 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:24.379+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1327 | Track: click | TS: 2026-04-05 10:17:24
+[2026-04-05T10:17:44.412+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 153 | Track: conversion | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.413+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 659 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.414+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1369 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.415+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1214 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.416+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1749 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.416+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1075 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.417+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 232 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.418+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 9 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.419+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 123 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.419+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 619 | Track: click | TS: 2026-04-05 10:17:44
+[2026-04-05T10:17:44.420+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1876 | Track: qualified | TS: 2026-04-05 10:17:44
+[2026-04-05T10:18:07.501+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 671 | Track: qualified | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.502+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 598 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.504+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 401 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.505+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 741 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.505+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1920 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.506+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 660 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.507+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1865 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.508+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 820 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:07.510+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 788 | Track: click | TS: 2026-04-05 10:18:07
+[2026-04-05T10:18:30.587+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 535 | Track: qualified | TS: 2026-04-05 10:18:30
+[2026-04-05T10:18:50.610+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 966 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.611+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1768 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.611+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1839 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.612+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 999 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.613+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 668 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.613+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1813 | Track: qualified | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.614+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1726 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.615+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1415 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.616+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 723 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.618+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 615 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.620+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 587 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.621+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1092 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.623+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 662 | Track: qualified | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.624+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 496 | Track: conversion | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.625+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1128 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:18:50.626+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 373 | Track: click | TS: 2026-04-05 10:18:50
+[2026-04-05T10:19:13.834+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1112 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.837+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1150 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.839+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1376 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.842+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1432 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.844+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1343 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.845+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 923 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.847+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 617 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.850+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 454 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.854+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 641 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.856+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 500 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.858+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 808 | Track: qualified | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.859+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 408 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.860+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1770 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.862+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1251 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.863+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1711 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.863+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1414 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.864+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1420 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.865+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 588 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.866+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1573 | Track: conversion | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:13.867+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1943 | Track: click | TS: 2026-04-05 10:19:13
+[2026-04-05T10:19:37.016+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1609 | Track: qualified | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.018+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 43 | Track: click | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.020+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 69 | Track: click | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.022+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1384 | Track: click | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.025+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1767 | Track: click | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.027+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 621 | Track: click | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.029+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1864 | Track: qualified | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:37.030+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1027 | Track: qualified | TS: 2026-04-05 10:19:37
+[2026-04-05T10:19:57.060+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 171 | Track: qualified | TS: 2026-04-05 10:19:57
+[2026-04-05T10:19:57.061+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2052 | Track: click | TS: 2026-04-05 10:19:57
+[2026-04-05T10:19:57.063+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1793 | Track: click | TS: 2026-04-05 10:19:57
+[2026-04-05T10:20:20.136+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 849 | Track: conversion | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.138+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 259 | Track: qualified | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.138+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1621 | Track: click | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.139+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 319 | Track: click | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.141+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 230 | Track: click | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.144+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1310 | Track: conversion | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:20.146+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 354 | Track: unqualified | TS: 2026-04-05 10:20:20
+[2026-04-05T10:20:43.389+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1420 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.391+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 288 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.392+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 449 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.392+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1179 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.393+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1149 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.394+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2016 | Track: qualified | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.395+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 712 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.395+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1797 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.396+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 526 | Track: click | TS: 2026-04-05 10:20:43
+[2026-04-05T10:20:43.397+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2054 | Track: conversion | TS: 2026-04-05 10:20:43
+[2026-04-05T10:21:03.429+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1821 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.431+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 206 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.433+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1787 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.435+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1454 | Track: qualified | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.438+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1352 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.440+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1338 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.442+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 723 | Track: unqualified | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.444+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1088 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.445+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1780 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.447+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 510 | Track: conversion | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.448+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1694 | Track: qualified | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.449+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1127 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.450+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1543 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.451+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1416 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.452+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1015 | Track: click | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:03.453+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1909 | Track: qualified | TS: 2026-04-05 10:21:03
+[2026-04-05T10:21:26.632+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1152 | Track: unqualified | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.634+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1378 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.636+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 701 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.637+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 335 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.638+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1018 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.639+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1718 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.641+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1828 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.643+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 577 | Track: qualified | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.646+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 923 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:26.651+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1413 | Track: click | TS: 2026-04-05 10:21:26
+[2026-04-05T10:21:49.839+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 661 | Track: click | TS: 2026-04-05 10:21:49
+[2026-04-05T10:21:49.841+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1256 | Track: click | TS: 2026-04-05 10:21:49
+[2026-04-05T10:21:49.842+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 258 | Track: click | TS: 2026-04-05 10:21:49
+[2026-04-05T10:21:49.843+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 489 | Track: click | TS: 2026-04-05 10:21:49
+[2026-04-05T10:21:49.844+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 567 | Track: click | TS: 2026-04-05 10:21:49
+[2026-04-05T10:22:09.876+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 448 | Track: click | TS: 2026-04-05 10:22:09
+[2026-04-05T10:22:09.878+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1725 | Track: click | TS: 2026-04-05 10:22:09
+[2026-04-05T10:22:09.880+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1869 | Track: click | TS: 2026-04-05 10:22:09
+[2026-04-05T10:22:09.881+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1548 | Track: unqualified | TS: 2026-04-05 10:22:09
+[2026-04-05T10:22:33.212+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1549 | Track: qualified | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.214+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1342 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.216+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 846 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.217+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1127 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.218+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1666 | Track: conversion | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.219+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 9 | Track: qualified | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.221+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 189 | Track: conversion | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.222+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 144 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.223+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 178 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.224+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1645 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.225+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1598 | Track: unqualified | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.225+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1056 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.226+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1018 | Track: qualified | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:33.228+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1345 | Track: click | TS: 2026-04-05 10:22:33
+[2026-04-05T10:22:56.476+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1157 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.478+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1360 | Track: conversion | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.481+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 405 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.483+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1746 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.485+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1351 | Track: unqualified | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.488+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 736 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.490+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 885 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:22:56.492+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1153 | Track: click | TS: 2026-04-05 10:22:56
+[2026-04-05T10:23:16.525+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 393 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.526+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2056 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.527+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 299 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.528+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1934 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.529+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1324 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.530+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 919 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.530+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1818 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.531+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 330 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:16.532+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1752 | Track: click | TS: 2026-04-05 10:23:16
+[2026-04-05T10:23:39.703+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1258 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.706+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 720 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.708+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1139 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.709+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1848 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.711+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 783 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.713+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1931 | Track: conversion | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.714+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 568 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.717+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1139 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.719+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 981 | Track: unqualified | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.720+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 523 | Track: unqualified | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.721+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 88 | Track: click | TS: 2026-04-05 10:23:39
+[2026-04-05T10:23:39.722+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1031 | Track: qualified | TS: 2026-04-05 10:23:39
+[2026-04-05T10:24:02.920+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 237 | Track: conversion | TS: 2026-04-05 10:24:02
+[2026-04-05T10:24:02.922+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 152 | Track: unqualified | TS: 2026-04-05 10:24:02
+[2026-04-05T10:24:02.925+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 781 | Track: conversion | TS: 2026-04-05 10:24:02
+[2026-04-05T10:24:22.946+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 580 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.947+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1891 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.948+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 391 | Track: unqualified | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.949+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 383 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.950+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 161 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.951+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 148 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.952+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1793 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.952+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1603 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.953+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1198 | Track: conversion | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.954+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 243 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.954+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1944 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.956+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1564 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:22.959+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 709 | Track: click | TS: 2026-04-05 10:24:22
+[2026-04-05T10:24:46.171+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 480 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.172+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 616 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.173+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1973 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.174+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1905 | Track: unqualified | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.174+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 82 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.175+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1958 | Track: qualified | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.176+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 186 | Track: unqualified | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.176+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 90 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.177+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 2057 | Track: unqualified | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.178+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1529 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.179+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1307 | Track: conversion | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.180+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1542 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.181+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 360 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.181+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 566 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.182+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 466 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.183+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1282 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.184+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 1427 | Track: click | TS: 2026-04-05 10:24:46
+[2026-04-05T10:24:46.185+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 405 | Track: conversion | TS: 2026-04-05 10:24:46
+[2026-04-05T10:25:09.383+0000] {logging_mixin.py:190} INFO - [+] Inserted: Job 536 | Track: click | TS: 2026-04-05 10:25:09
+[2026-04-05T10:25:20.037+0000] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-05T10:25:20.104+0000] {process_utils.py:132} INFO - Sending 15 to group 723. PIDs of all processes in the group: [723]
+[2026-04-05T10:25:20.109+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 723
+[2026-04-05T10:25:20.130+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-04-05T10:25:20.164+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.8/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/scheduler_job_runner.py", line 990, in _execute
+    executor.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 392, in start
+    self.impl.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 330, in start
+    worker.start()
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.8/multiprocessing/popen_fork.py", line 75, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 80, in run
+    return super().run()
+  File "/usr/local/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 211, in do_work
+    self.execute_work(key=key, command=command)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 100, in execute_work
+    state = self._execute_work_in_fork(command)
+  File "/home/***/.local/lib/python3.8/site-packages/***/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/executors/local_executor.py", line 142, in _execute_work_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.8/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.8/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.8/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.8/site-packages/***/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/***/.local/lib/python3.8/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/***/scripts/ingestion/data_generator.py", line 92, in main
+    time.sleep(20)
+  File "/home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2026-04-05T10:25:20.345+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/ingestion/data_generator.py", line 92, in main
+    time.sleep(20)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-04-05T10:25:20.394+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=recruitment_cdc_cassandra_to_mysql, task_id=run_data_generator, run_id=scheduled__2026-04-05T09:00:00+00:00, execution_date=20260405T090000, start_date=20260405T100003, end_date=20260405T102520
+[2026-04-05T10:25:20.480+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-04-05T10:25:20.545+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=723, status='terminated', exitcode=2, started='10:00:03') (723) terminated with exit code 2
+[2026-04-05T10:25:20.548+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 143
+[2026-04-05T10:25:20.640+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check

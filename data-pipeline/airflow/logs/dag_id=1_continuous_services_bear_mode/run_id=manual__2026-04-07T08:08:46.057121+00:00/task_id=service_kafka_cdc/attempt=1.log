@@ -1,0 +1,105 @@
+[2026-04-07T08:08:48.846+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-07T08:08:48.860+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:08:48.867+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:08:48.867+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 6
+[2026-04-07T08:08:48.971+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): service_kafka_cdc> on 2026-04-07 08:08:46.057121+00:00
+[2026-04-07T08:08:48.979+0000] {standard_task_runner.py:72} INFO - Started process 842 to run task
+[2026-04-07T08:08:48.994+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '1_continuous_services_bear_mode', 'service_kafka_cdc', 'manual__2026-04-07T08:08:46.057121+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag_continuous_services.py', '--cfg-path', '/tmp/tmp6ucn0n3j']
+[2026-04-07T08:08:49.004+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask service_kafka_cdc
+[2026-04-07T08:08:49.222+0000] {task_command.py:467} INFO - Running <TaskInstance: 1_continuous_services_bear_mode.service_kafka_cdc manual__2026-04-07T08:08:46.057121+00:00 [running]> on host 964a90234230
+[2026-04-07T08:08:49.576+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='1_continuous_services_bear_mode' AIRFLOW_CTX_TASK_ID='service_kafka_cdc' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T08:08:46.057121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T08:08:46.057121+00:00'
+[2026-04-07T08:08:49.578+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-07T08:08:49.859+0000] {cluster.py:1324} WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['cassandra'], lbp = None)
+[2026-04-07T08:08:50.072+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 66 to 65 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:08:50.078+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 65 to 5 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:08:50.084+0000] {connection.py:1290} ERROR - Closing connection <AsyncoreConnection(134970339771152) 172.19.0.6:9042> due to protocol error: Error from server: code=000a [Protocol error] message="Beta version of the protocol used (5/v5-beta), but USE_BETA flag is unset"
+[2026-04-07T08:08:50.086+0000] {cluster.py:1701} WARNING - Downgrading core protocol version from 5 to 4 for 172.19.0.6:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. https://docs.datastax.com/en/developer/python-driver/latest/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+[2026-04-07T08:08:50.239+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-07T08:08:50.320+0000] {policies.py:289} INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '172.19.0.6:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+[2026-04-07T08:08:50.401+0000] {connection.py:1420} WARNING - An authentication challenge was not sent, this is suspicious because the driver expects authentication (configured authenticator = PlainTextAuthenticator)
+[2026-04-07T08:08:50.466+0000] {logging_mixin.py:190} INFO - 🚀 CDC Polling started at 2026-04-07 08:07:50.460092
+[2026-04-07T08:08:51.028+0000] {protocol.py:1210} WARNING - Server warning: Read 8970 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:07:50.460092 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:09:09.617+0000] {protocol.py:1210} WARNING - Server warning: Read 8978 live rows and 73960 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:07:50.460092 AND  LIMIT 5000; token 9210261722304791681 (see tombstone_warn_threshold)
+[2026-04-07T08:09:11.440+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.441+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.441+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.442+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.442+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.442+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.442+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.442+0000] {logging_mixin.py:190} INFO - [V] Đã đẩy lên Kafka: Topic tracking_events
+[2026-04-07T08:09:11.454+0000] {logging_mixin.py:190} INFO - [!] Đã đẩy 8 bản ghi lên Kafka!
+[2026-04-07T08:09:30.577+0000] {protocol.py:1210} WARNING - Server warning: Read 2523 live rows and 21607 tombstone cells for query SELECT custom_track, job_id, ts FROM keyspace_name.tracking WHERE ts > 2026-04-07 08:08:51.000000 AND  LIMIT 5000; token -4225542666893072972 (see tombstone_warn_threshold)
+[2026-04-07T08:09:30.678+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/ingestion/kafka_cdc_producer.py", line 37, in cdc_polling_consumer
+    rows = session.execute(query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/cassandra/cluster.py", line 2677, in execute
+    return self.execute_async(query, parameters, trace, custom_payload, timeout, execution_profile, paging_state, host, execute_as).result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/cassandra/cluster.py", line 5048, in result
+    raise self._final_exception
+cassandra.ReadFailure: Error from server: code=1300 [Replica(s) failed to execute read] message="Operation failed - received 0 responses and 1 failures" info={'consistency': 'LOCAL_ONE', 'required_responses': 1, 'received_responses': 0, 'failures': 1}
+[2026-04-07T08:09:31.930+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=1_continuous_services_bear_mode, task_id=service_kafka_cdc, run_id=manual__2026-04-07T08:08:46.057121+00:00, execution_date=20260407T080846, start_date=20260407T080848, end_date=20260407T080931
+[2026-04-07T08:09:32.922+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-04-07T08:09:32.924+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 4 for task service_kafka_cdc (Error from server: code=1300 [Replica(s) failed to execute read] message="Operation failed - received 0 responses and 1 failures" info={'consistency': 'LOCAL_ONE', 'required_responses': 1, 'received_responses': 0, 'failures': 1}; 842)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/scripts/ingestion/kafka_cdc_producer.py", line 37, in cdc_polling_consumer
+    rows = session.execute(query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/cassandra/cluster.py", line 2677, in execute
+    return self.execute_async(query, parameters, trace, custom_payload, timeout, execution_profile, paging_state, host, execute_as).result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/cassandra/cluster.py", line 5048, in result
+    raise self._final_exception
+cassandra.ReadFailure: Error from server: code=1300 [Replica(s) failed to execute read] message="Operation failed - received 0 responses and 1 failures" info={'consistency': 'LOCAL_ONE', 'required_responses': 1, 'received_responses': 0, 'failures': 1}
+[2026-04-07T08:09:33.030+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-04-07T08:09:33.136+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T08:09:34.244+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

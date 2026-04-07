@@ -1,0 +1,72 @@
+[2026-04-07T08:08:48.853+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-07T08:08:48.871+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_spark_streaming manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:08:48.882+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1_continuous_services_bear_mode.service_spark_streaming manual__2026-04-07T08:08:46.057121+00:00 [queued]>
+[2026-04-07T08:08:48.882+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 6
+[2026-04-07T08:08:48.971+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): service_spark_streaming> on 2026-04-07 08:08:46.057121+00:00
+[2026-04-07T08:08:48.979+0000] {standard_task_runner.py:72} INFO - Started process 843 to run task
+[2026-04-07T08:08:48.987+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '1_continuous_services_bear_mode', 'service_spark_streaming', 'manual__2026-04-07T08:08:46.057121+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_continuous_services.py', '--cfg-path', '/tmp/tmptx3cd1uq']
+[2026-04-07T08:08:48.995+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask service_spark_streaming
+[2026-04-07T08:08:49.232+0000] {task_command.py:467} INFO - Running <TaskInstance: 1_continuous_services_bear_mode.service_spark_streaming manual__2026-04-07T08:08:46.057121+00:00 [running]> on host 964a90234230
+[2026-04-07T08:08:49.522+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='1_continuous_services_bear_mode' AIRFLOW_CTX_TASK_ID='service_spark_streaming' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T08:08:46.057121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T08:08:46.057121+00:00'
+[2026-04-07T08:08:49.524+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-07T08:09:43.621+0000] {java_gateway.py:2313} INFO - Callback Server Starting
+[2026-04-07T08:09:43.624+0000] {java_gateway.py:2315} INFO - Socket listening on ('127.0.0.1', 35125)
+[2026-04-07T08:09:43.882+0000] {logging_mixin.py:190} INFO - >>> [BEAR MODE] REAL-TIME PIPELINE IS RUNNING...
+[2026-04-07T08:09:48.535+0000] {clientserver.py:588} INFO - Python Server ready to receive messages
+[2026-04-07T08:09:48.535+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:10:47.828+0000] {job.py:229} INFO - Heartbeat recovered after 14.07 seconds
+[2026-04-07T08:10:53.191+0000] {job.py:229} INFO - Heartbeat recovered after 24.36 seconds
+[2026-04-07T08:11:00.363+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:11:30.310+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:12:00.248+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:13:00.230+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:13:30.180+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:14:00.172+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:14:30.319+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:15:00.393+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:15:32.937+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:16:00.182+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:16:30.165+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:17:00.187+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:17:30.215+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:18:00.176+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:18:30.156+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:19:00.212+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:19:30.163+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:20:00.152+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:20:30.174+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:21:00.290+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:21:32.922+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:22:00.151+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:22:30.152+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:23:00.159+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:23:30.161+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:24:00.173+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:24:30.148+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:25:00.148+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:25:30.140+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:26:00.135+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:26:30.151+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:27:00.281+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:27:32.885+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:28:00.183+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:28:30.172+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:29:00.148+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:29:30.156+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:30:00.152+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:30:36.064+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:31:00.168+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:31:30.189+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:32:00.149+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:33:00.145+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:33:32.901+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:34:00.210+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:34:30.132+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:35:00.146+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:35:30.162+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:36:00.217+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:36:30.177+0000] {clientserver.py:602} INFO - Received command c on object id p0
+[2026-04-07T08:36:52.763+0000] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-07T08:36:52.969+0000] {process_utils.py:132} INFO - Sending 15 to group 843. PIDs of all processes in the group: [847, 843]
+[2026-04-07T08:36:52.995+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 843
+[2026-04-07T08:36:53.056+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.

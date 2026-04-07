@@ -1,0 +1,22 @@
+[2026-04-07T08:10:04.541+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-07T08:10:04.551+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_batch_etl_every_10min.run_batch_processing scheduled__2026-04-07T08:00:00+00:00 [queued]>
+[2026-04-07T08:10:04.560+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_batch_etl_every_10min.run_batch_processing scheduled__2026-04-07T08:00:00+00:00 [queued]>
+[2026-04-07T08:10:04.560+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-04-07T08:10:04.570+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): run_batch_processing> on 2026-04-07 08:00:00+00:00
+[2026-04-07T08:10:04.575+0000] {standard_task_runner.py:72} INFO - Started process 5696 to run task
+[2026-04-07T08:10:04.578+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '2_batch_etl_every_10min', 'run_batch_processing', 'scheduled__2026-04-07T08:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/dag_batch_processing_10min.py', '--cfg-path', '/tmp/tmp22t009xp']
+[2026-04-07T08:10:04.581+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask run_batch_processing
+[2026-04-07T08:10:04.638+0000] {task_command.py:467} INFO - Running <TaskInstance: 2_batch_etl_every_10min.run_batch_processing scheduled__2026-04-07T08:00:00+00:00 [running]> on host 964a90234230
+[2026-04-07T08:10:04.706+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='shibe' AIRFLOW_CTX_DAG_ID='2_batch_etl_every_10min' AIRFLOW_CTX_TASK_ID='run_batch_processing' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-07T08:00:00+00:00'
+[2026-04-07T08:10:04.707+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-04-07T08:10:10.104+0000] {logging_mixin.py:190} INFO - >>> Loading data from Cassandra...
+[2026-04-07T08:10:13.568+0000] {logging_mixin.py:190} INFO - >>> Writing to MySQL...
+[2026-04-07T08:10:29.304+0000] {job.py:229} INFO - Heartbeat recovered after 14.55 seconds
+[2026-04-07T08:10:39.733+0000] {job.py:229} INFO - Heartbeat recovered after 13.46 seconds
+[2026-04-07T08:10:51.014+0000] {logging_mixin.py:190} INFO - >>> ETL Pipeline Finished!
+[2026-04-07T08:10:51.993+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-04-07T08:10:52.003+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-04-07T08:10:52.003+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=2_batch_etl_every_10min, task_id=run_batch_processing, run_id=scheduled__2026-04-07T08:00:00+00:00, execution_date=20260407T080000, start_date=20260407T081004, end_date=20260407T081052
+[2026-04-07T08:10:52.076+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-04-07T08:10:52.098+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T08:10:52.101+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,354 @@
+[2026-04-06T09:04:57.789+0000] {processor.py:186} INFO - Started process (PID=177) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:04:57.791+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:04:57.795+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:57.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:04:58.195+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:04:58.434+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.433+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG:2_batch_etl_every_10min
+[2026-04-06T09:04:58.445+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.445+0000] {override.py:1901} INFO - Created Permission View: can edit on DAG:2_batch_etl_every_10min
+[2026-04-06T09:04:58.453+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.453+0000] {override.py:1901} INFO - Created Permission View: can read on DAG:2_batch_etl_every_10min
+[2026-04-06T09:04:58.464+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.464+0000] {override.py:1901} INFO - Created Permission View: menu access on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:04:58.473+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.473+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:04:58.480+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.480+0000] {override.py:1901} INFO - Created Permission View: can create on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:04:58.491+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.491+0000] {override.py:1901} INFO - Created Permission View: can read on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:04:58.492+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.492+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:04:58.504+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.504+0000] {dag.py:3262} INFO - Creating ORM DAG for 2_batch_etl_every_10min
+[2026-04-06T09:04:58.515+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:04:58.514+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:04:58.536+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.761 seconds
+[2026-04-06T09:05:28.975+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:28.976+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:05:28.979+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:28.979+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:29.342+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:29.380+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:29.380+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:05:29.410+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:29.410+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:05:29.432+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.464 seconds
+[2026-04-06T09:05:59.572+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:59.574+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:05:59.578+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:59.577+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:55.409+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:05:55.426+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:55.426+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:05:55.447+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:05:55.447+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:05:55.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.309 seconds
+[2026-04-06T09:06:25.737+0000] {processor.py:186} INFO - Started process (PID=207) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:25.740+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:06:25.743+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:25.742+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:26.029+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:26.054+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:26.054+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:06:26.077+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:26.077+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:06:26.098+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.366 seconds
+[2026-04-06T09:06:56.251+0000] {processor.py:186} INFO - Started process (PID=218) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:56.254+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:06:56.257+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:56.257+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:56.486+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:06:56.507+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:56.506+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:06:56.524+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:06:56.524+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:06:56.538+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.294 seconds
+[2026-04-06T09:07:27.188+0000] {processor.py:186} INFO - Started process (PID=229) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:27.192+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:07:27.195+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:27.195+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:27.270+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:27.293+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:27.293+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:07:27.317+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:27.317+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:07:27.334+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.152 seconds
+[2026-04-06T09:07:57.708+0000] {processor.py:186} INFO - Started process (PID=240) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:57.712+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:07:57.737+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:57.737+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:57.900+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:07:57.952+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:57.952+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:07:57.995+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:07:57.995+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T08:50:00+00:00, run_after=2026-04-06T09:00:00+00:00
+[2026-04-06T09:07:58.026+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.325 seconds
+[2026-04-06T09:08:28.966+0000] {processor.py:186} INFO - Started process (PID=428) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:08:28.969+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:08:28.977+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:08:28.976+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:08:29.129+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:08:29.172+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:08:29.171+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:08:29.240+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.291 seconds
+[2026-04-06T09:08:59.928+0000] {processor.py:186} INFO - Started process (PID=900) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:08:59.929+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:08:59.932+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:08:59.932+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:09:00.032+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:09:00.072+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:09:00.072+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:09:00.144+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.223 seconds
+[2026-04-06T09:09:30.393+0000] {processor.py:186} INFO - Started process (PID=911) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:09:30.400+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:09:30.404+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:09:30.404+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:09:30.500+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:09:30.532+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:09:30.532+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:09:30.574+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.198 seconds
+[2026-04-06T09:10:01.256+0000] {processor.py:186} INFO - Started process (PID=1132) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:01.258+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:10:01.265+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:10:01.264+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:01.423+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:01.474+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:10:01.472+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:10:01.537+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.300 seconds
+[2026-04-06T09:10:32.056+0000] {processor.py:186} INFO - Started process (PID=1182) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:32.057+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:10:32.059+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:10:32.059+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:32.125+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:10:32.147+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:10:32.146+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:10:32.190+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.143 seconds
+[2026-04-06T09:11:02.555+0000] {processor.py:186} INFO - Started process (PID=1427) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:02.559+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:11:02.566+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:11:02.566+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:02.760+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:02.798+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:11:02.797+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:11:02.862+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.324 seconds
+[2026-04-06T09:11:33.274+0000] {processor.py:186} INFO - Started process (PID=2056) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:33.277+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:11:33.280+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:11:33.280+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:33.406+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:11:33.432+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:11:33.431+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:11:33.467+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.200 seconds
+[2026-04-06T09:12:03.718+0000] {processor.py:186} INFO - Started process (PID=2067) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:03.719+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:12:03.722+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:12:03.722+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:03.807+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:03.839+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:12:03.839+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:12:03.876+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.168 seconds
+[2026-04-06T09:12:34.283+0000] {processor.py:186} INFO - Started process (PID=2337) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:34.288+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:12:34.293+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:12:34.292+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:34.406+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:12:34.430+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:12:34.430+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:12:34.465+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.192 seconds
+[2026-04-06T09:13:04.967+0000] {processor.py:186} INFO - Started process (PID=2348) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:04.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:13:04.973+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:13:04.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:05.041+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:05.061+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:13:05.061+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:13:05.099+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.138 seconds
+[2026-04-06T09:13:35.910+0000] {processor.py:186} INFO - Started process (PID=2787) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:35.912+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:13:35.919+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:13:35.919+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:36.210+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:13:36.317+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:13:36.316+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:13:36.417+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.528 seconds
+[2026-04-06T09:14:08.074+0000] {processor.py:186} INFO - Started process (PID=11474) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:08.076+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:14:08.088+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:08.088+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:08.255+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:08.287+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:08.287+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:14:08.319+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:08.318+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:14:08.342+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.304 seconds
+[2026-04-06T09:14:40.672+0000] {processor.py:186} INFO - Started process (PID=15547) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:40.672+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:14:40.674+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:40.674+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:40.764+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:14:40.791+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:40.791+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:14:40.824+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:14:40.823+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:14:40.848+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.183 seconds
+[2026-04-06T09:15:13.817+0000] {processor.py:186} INFO - Started process (PID=19618) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:13.818+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:15:13.822+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:13.822+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:14.004+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:14.036+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:14.035+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:15:14.067+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:14.067+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:15:14.093+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.283 seconds
+[2026-04-06T09:15:46.078+0000] {processor.py:186} INFO - Started process (PID=23689) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:46.079+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:15:46.085+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:46.084+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:46.213+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:15:46.246+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:46.245+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:15:46.276+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:15:46.276+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:15:46.307+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.243 seconds
+[2026-04-06T09:17:49.559+0000] {processor.py:186} INFO - Started process (PID=177) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:17:49.561+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:17:49.566+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:49.565+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:17:50.064+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:17:50.451+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.449+0000] {override.py:1901} INFO - Created Permission View: can read on DAG:2_batch_etl_every_10min
+[2026-04-06T09:17:50.486+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.485+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG:2_batch_etl_every_10min
+[2026-04-06T09:17:50.513+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.512+0000] {override.py:1901} INFO - Created Permission View: can edit on DAG:2_batch_etl_every_10min
+[2026-04-06T09:17:50.530+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.529+0000] {override.py:1901} INFO - Created Permission View: can read on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:17:50.553+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.552+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:17:50.566+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.566+0000] {override.py:1901} INFO - Created Permission View: menu access on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:17:50.577+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.577+0000] {override.py:1901} INFO - Created Permission View: can create on DAG Run:2_batch_etl_every_10min
+[2026-04-06T09:17:50.578+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.578+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:17:50.601+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.600+0000] {dag.py:3262} INFO - Creating ORM DAG for 2_batch_etl_every_10min
+[2026-04-06T09:17:50.618+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:17:50.618+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:00:00+00:00, run_after=2026-04-06T09:10:00+00:00
+[2026-04-06T09:17:50.647+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 1.101 seconds
+[2026-04-06T09:18:21.415+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:21.417+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:18:21.423+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:21.423+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:21.742+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:21.779+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:21.779+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:18:21.818+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:21.817+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:00:00+00:00, run_after=2026-04-06T09:10:00+00:00
+[2026-04-06T09:18:21.840+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.436 seconds
+[2026-04-06T09:18:52.450+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:52.457+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:18:52.459+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:52.459+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:52.648+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:18:52.666+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:52.665+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:18:52.685+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:18:52.685+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:00:00+00:00, run_after=2026-04-06T09:10:00+00:00
+[2026-04-06T09:18:52.700+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.258 seconds
+[2026-04-06T09:19:22.930+0000] {processor.py:186} INFO - Started process (PID=207) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:22.933+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:19:22.935+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:22.935+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:23.148+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:23.167+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:23.166+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:19:23.186+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:23.186+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:00:00+00:00, run_after=2026-04-06T09:10:00+00:00
+[2026-04-06T09:19:23.199+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.274 seconds
+[2026-04-06T09:19:53.729+0000] {processor.py:186} INFO - Started process (PID=218) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:53.733+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:19:53.736+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:53.736+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:53.966+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:19:53.992+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:53.992+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:19:54.015+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:19:54.015+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:00:00+00:00, run_after=2026-04-06T09:10:00+00:00
+[2026-04-06T09:19:54.035+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.311 seconds
+[2026-04-06T09:20:24.775+0000] {processor.py:186} INFO - Started process (PID=229) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:24.778+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:20:24.781+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:24.781+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:24.857+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:24.879+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:24.879+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:20:24.902+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:24.902+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:20:24.926+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.159 seconds
+[2026-04-06T09:20:55.379+0000] {processor.py:186} INFO - Started process (PID=240) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:55.381+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:20:55.383+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:55.383+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:55.452+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:20:55.479+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:55.479+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:20:55.499+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:20:55.498+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:20:55.520+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.146 seconds
+[2026-04-06T09:21:26.080+0000] {processor.py:186} INFO - Started process (PID=251) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:26.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:21:26.089+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:26.089+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:26.236+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:26.283+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:26.283+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:21:26.321+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:26.321+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:21:26.357+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.285 seconds
+[2026-04-06T09:21:56.835+0000] {processor.py:186} INFO - Started process (PID=262) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:56.837+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:21:56.846+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:56.845+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:56.930+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:21:56.960+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:56.959+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:21:56.989+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:21:56.988+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:21:57.012+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.186 seconds
+[2026-04-06T09:22:27.496+0000] {processor.py:186} INFO - Started process (PID=273) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:27.498+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:22:27.502+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:27.501+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:27.601+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:27.625+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:27.624+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:22:27.646+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:27.646+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:22:27.663+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.179 seconds
+[2026-04-06T09:22:58.091+0000] {processor.py:186} INFO - Started process (PID=284) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:58.093+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:22:58.100+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:58.100+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:58.219+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:22:58.258+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:58.258+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:22:58.286+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:22:58.285+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:22:58.303+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.227 seconds
+[2026-04-06T09:23:28.920+0000] {processor.py:186} INFO - Started process (PID=403) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:23:28.925+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:23:28.947+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:23:28.943+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:23:29.261+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:23:29.323+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:23:29.323+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:23:29.377+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:23:29.376+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:10:00+00:00, run_after=2026-04-06T09:20:00+00:00
+[2026-04-06T09:23:29.440+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.560 seconds
+[2026-04-06T09:24:00.225+0000] {processor.py:186} INFO - Started process (PID=885) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:00.227+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:24:00.231+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:24:00.230+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:00.354+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:00.395+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:24:00.395+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:24:00.497+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.282 seconds
+[2026-04-06T09:24:31.268+0000] {processor.py:186} INFO - Started process (PID=1227) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:31.270+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:24:31.275+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:24:31.273+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:31.424+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:24:31.452+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:24:31.451+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:24:31.487+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:24:31.487+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:24:31.508+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.254 seconds
+[2026-04-06T09:25:03.316+0000] {processor.py:186} INFO - Started process (PID=2961) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:03.320+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:25:03.330+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:03.329+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:03.534+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:03.587+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:03.587+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:25:03.642+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:03.642+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:25:03.683+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.383 seconds
+[2026-04-06T09:25:35.296+0000] {processor.py:186} INFO - Started process (PID=5601) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:35.297+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:25:35.301+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:35.301+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:35.391+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:25:35.420+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:35.420+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:25:35.457+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:25:35.457+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:25:35.486+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.197 seconds
+[2026-04-06T09:26:08.192+0000] {processor.py:186} INFO - Started process (PID=5615) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:08.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:26:08.195+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:08.195+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:08.260+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:08.285+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:08.285+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:26:08.306+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:08.306+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:26:08.321+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.134 seconds
+[2026-04-06T09:26:41.272+0000] {processor.py:186} INFO - Started process (PID=5904) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:41.274+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:26:41.278+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:41.278+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:41.396+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:26:41.429+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:41.428+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:26:41.461+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:26:41.461+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:26:41.485+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.225 seconds
+[2026-04-06T09:27:13.534+0000] {processor.py:186} INFO - Started process (PID=10413) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:13.536+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:27:13.539+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:13.539+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:13.625+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:13.654+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:13.654+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:27:13.688+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:13.688+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:27:13.709+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.185 seconds
+[2026-04-06T09:27:46.633+0000] {processor.py:186} INFO - Started process (PID=14484) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:46.634+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:27:46.638+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:46.637+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:46.717+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:27:46.770+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:46.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:27:46.812+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:27:46.812+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:27:46.837+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.212 seconds
+[2026-04-06T09:28:19.194+0000] {processor.py:186} INFO - Started process (PID=18556) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:19.197+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:28:19.210+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:19.209+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:19.380+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:19.459+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:19.459+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:28:19.512+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:19.512+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:28:19.538+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.363 seconds
+[2026-04-06T09:28:50.095+0000] {processor.py:186} INFO - Started process (PID=22625) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:50.098+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:28:50.109+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:50.108+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:50.251+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:28:50.283+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:50.283+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:28:50.309+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:28:50.309+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:28:50.334+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.279 seconds
+[2026-04-06T09:29:20.722+0000] {processor.py:186} INFO - Started process (PID=26695) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:20.724+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:29:20.727+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:20.727+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:20.790+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:20.815+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:20.815+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:29:20.835+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:20.834+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:29:20.852+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.137 seconds
+[2026-04-06T09:29:50.937+0000] {processor.py:186} INFO - Started process (PID=30767) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:50.939+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:29:50.943+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:50.943+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:51.009+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:29:51.032+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:51.032+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:29:51.052+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:29:51.052+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:20:00+00:00, run_after=2026-04-06T09:30:00+00:00
+[2026-04-06T09:29:51.068+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.139 seconds
+[2026-04-06T09:30:21.491+0000] {processor.py:186} INFO - Started process (PID=35536) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:21.493+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:30:21.509+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:21.508+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:21.878+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:21.960+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:21.960+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:30:22.041+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:22.041+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:30:00+00:00, run_after=2026-04-06T09:40:00+00:00
+[2026-04-06T09:30:22.071+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.601 seconds
+[2026-04-06T09:30:53.042+0000] {processor.py:186} INFO - Started process (PID=39606) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:53.048+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:30:53.051+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:53.051+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:53.144+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:30:53.177+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:53.176+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:30:53.205+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:30:53.205+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:30:00+00:00, run_after=2026-04-06T09:40:00+00:00
+[2026-04-06T09:30:53.230+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.197 seconds
+[2026-04-06T09:31:23.784+0000] {processor.py:186} INFO - Started process (PID=43680) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:23.785+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:31:23.787+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:23.787+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:23.855+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:23.877+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:23.876+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:31:23.899+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:23.899+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:30:00+00:00, run_after=2026-04-06T09:40:00+00:00
+[2026-04-06T09:31:23.925+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.148 seconds
+[2026-04-06T09:31:54.406+0000] {processor.py:186} INFO - Started process (PID=47754) to work on /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:54.409+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_batch_processing_10min.py for tasks to queue
+[2026-04-06T09:31:54.412+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:54.411+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:54.490+0000] {processor.py:925} INFO - DAG(s) '2_batch_etl_every_10min' retrieved from /opt/airflow/dags/dag_batch_processing_10min.py
+[2026-04-06T09:31:54.513+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:54.513+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-06T09:31:54.534+0000] {logging_mixin.py:190} INFO - [2026-04-06T09:31:54.534+0000] {dag.py:4180} INFO - Setting next_dagrun for 2_batch_etl_every_10min to 2026-04-06T09:30:00+00:00, run_after=2026-04-06T09:40:00+00:00
+[2026-04-06T09:31:54.555+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_batch_processing_10min.py took 0.157 seconds

@@ -1,0 +1,134 @@
+[2026-04-05T10:16:05.834+0000] {processor.py:186} INFO - Started process (PID=2357) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:05.835+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:16:05.836+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:05.836+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:06.395+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:06.498+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.498+0000] {override.py:1901} INFO - Created Permission View: can read on DAG:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.513+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.513+0000] {override.py:1901} INFO - Created Permission View: can edit on DAG:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.521+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.520+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.529+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.529+0000] {override.py:1901} INFO - Created Permission View: menu access on DAG Run:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.539+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.538+0000] {override.py:1901} INFO - Created Permission View: can create on DAG Run:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.549+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.548+0000] {override.py:1901} INFO - Created Permission View: can read on DAG Run:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.555+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.555+0000] {override.py:1901} INFO - Created Permission View: can delete on DAG Run:1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.556+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.556+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:16:06.567+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.566+0000] {dag.py:3262} INFO - Creating ORM DAG for 1_ingestion_continuous_bear_mode
+[2026-04-05T10:16:06.575+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:06.575+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:16:06.590+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.764 seconds
+[2026-04-05T10:16:36.672+0000] {processor.py:186} INFO - Started process (PID=2370) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:36.673+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:16:36.674+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:36.673+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:37.033+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:16:37.056+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:37.055+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:16:37.092+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:16:37.091+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:16:37.116+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.449 seconds
+[2026-04-05T10:17:07.904+0000] {processor.py:186} INFO - Started process (PID=2381) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:07.906+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:17:07.908+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:07.908+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:08.389+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:08.419+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:08.418+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:17:08.441+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:08.441+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:17:08.457+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.561 seconds
+[2026-04-05T10:17:39.319+0000] {processor.py:186} INFO - Started process (PID=2392) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:39.320+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:17:39.321+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:39.321+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:39.692+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:17:39.714+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:39.713+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:17:39.737+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:17:39.736+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:17:39.754+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.442 seconds
+[2026-04-05T10:18:09.842+0000] {processor.py:186} INFO - Started process (PID=2403) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:09.843+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:18:09.844+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:09.844+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:10.259+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:10.309+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:10.308+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:18:10.347+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:10.346+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:18:10.382+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.547 seconds
+[2026-04-05T10:18:41.023+0000] {processor.py:186} INFO - Started process (PID=2414) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:41.024+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:18:41.025+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:41.025+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:41.405+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:18:41.431+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:41.430+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:18:41.451+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:18:41.450+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:18:41.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.445 seconds
+[2026-04-05T10:19:11.657+0000] {processor.py:186} INFO - Started process (PID=2425) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:11.659+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:19:11.660+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:11.659+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:12.036+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:12.062+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:12.061+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:19:12.080+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:12.080+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:19:12.101+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.452 seconds
+[2026-04-05T10:19:42.927+0000] {processor.py:186} INFO - Started process (PID=2436) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:42.928+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:19:42.929+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:42.928+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:43.327+0000] {processor.py:925} INFO - DAG(s) '1_ingestion_continuous_bear_mode' retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:43.350+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:43.348+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-05T10:19:43.379+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:43.378+0000] {dag.py:4180} INFO - Setting next_dagrun for 1_ingestion_continuous_bear_mode to 2026-04-01T00:00:00+00:00, run_after=2026-04-01T00:00:00+00:00
+[2026-04-05T10:19:43.408+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.487 seconds
+[2026-04-05T10:19:47.130+0000] {processor.py:186} INFO - Started process (PID=2442) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:47.131+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:19:47.132+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:47.132+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:47.661+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:19:47.656+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/dag_ingestion_continuous.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_ingestion_continuous.py", line 11, in <module>
+    with DAG(
+TypeError: __init__() got an unexpected keyword argument 'catch_with'
+[2026-04-05T10:19:47.662+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:19:47.690+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.573 seconds
+[2026-04-05T10:20:17.746+0000] {processor.py:186} INFO - Started process (PID=2453) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:17.749+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:20:17.750+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:20:17.750+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:18.258+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:20:18.256+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/dag_ingestion_continuous.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_ingestion_continuous.py", line 11, in <module>
+    with DAG(
+TypeError: __init__() got an unexpected keyword argument 'catch_with'
+[2026-04-05T10:20:18.258+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:18.280+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.542 seconds
+[2026-04-05T10:20:49.133+0000] {processor.py:186} INFO - Started process (PID=2464) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:49.133+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:20:49.135+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:20:49.135+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:49.573+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:20:49.572+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/dag_ingestion_continuous.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_ingestion_continuous.py", line 11, in <module>
+    with DAG(
+TypeError: __init__() got an unexpected keyword argument 'catch_with'
+[2026-04-05T10:20:49.573+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:20:49.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.463 seconds
+[2026-04-05T10:21:15.482+0000] {processor.py:186} INFO - Started process (PID=2475) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:15.485+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:21:15.487+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:21:15.487+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:16.071+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:21:16.070+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/dag_ingestion_continuous.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_ingestion_continuous.py", line 17, in <module>
+    'retry_delay': timedelta(minutes=1),
+NameError: name 'timedelta' is not defined
+[2026-04-05T10:21:16.072+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:16.094+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.618 seconds
+[2026-04-05T10:21:46.442+0000] {processor.py:186} INFO - Started process (PID=2486) to work on /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:46.443+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_ingestion_continuous.py for tasks to queue
+[2026-04-05T10:21:46.444+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:21:46.444+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:46.893+0000] {logging_mixin.py:190} INFO - [2026-04-05T10:21:46.892+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/dag_ingestion_continuous.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_ingestion_continuous.py", line 17, in <module>
+    'retry_delay': timedelta(minutes=1),
+NameError: name 'timedelta' is not defined
+[2026-04-05T10:21:46.894+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_ingestion_continuous.py
+[2026-04-05T10:21:46.909+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_ingestion_continuous.py took 0.474 seconds
