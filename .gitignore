@@ -5,6 +5,7 @@ cassandra_data/
 
 # Airflow logs & checkpoints
 data-pipeline/airflow/logs/
+data-pipeline/airflow/dags/
 data-pipeline/scripts/processing/checkpoints/
 
 # Python cache
