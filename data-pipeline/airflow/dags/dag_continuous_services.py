@@ -1,52 +1,53 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from datetime import datetime, timedelta  # <-- Đã thêm timedelta ở đây
+from datetime import datetime, timedelta
 import sys
 
-# Thêm path để Airflow tìm thấy script của bạn
+# Append scripts path to sys.path for Airflow visibility
 sys.path.append('/opt/airflow/scripts')
 
-# Import các hàm main từ script của bạn
+# Import core execution functions from the pipeline scripts
 try:
     from ingestion.data_generator import main as run_data_gen
     from ingestion.kafka_cdc_producer import cdc_polling_consumer as run_cdc
     from processing.stream_etl_kafka_to_mysql import main as run_stream
 except ImportError as e:
-    print(f"Lỗi import script: {e}")
+    print(f"Script import failed: {e}")
 
 default_args = {
     'owner': 'shibe',
     'start_date': datetime(2026, 4, 1),
     'retries': 5,
     'retry_delay': timedelta(minutes=1),
-    'execution_timeout': None, # QUAN TRỌNG: Cho phép task chạy vô hạn thời gian
+    'execution_timeout': None,  # Allow tasks to run indefinitely for continuous processing
 }
+
 with DAG(
-    '1_continuous_services_bear_mode',
+    '1_continuous_services_pipeline',
     default_args=default_args,
-    description='Chạy Data Gen, CDC và Stream ETL liên tục 24/7',
-    schedule_interval=None, # Bạn nhấn nút Play (Trigger) thủ công 1 lần duy nhất
+    description='Orchestration for continuous Data Generation, CDC, and Stream ETL services',
+    schedule_interval=None,  # Manual trigger only
     catchup=False,
-    max_active_runs=1 # Đảm bảo không có 2 bản copy chạy song song
+    max_active_runs=1  # Prevent overlapping execution runs
 ) as dag:
 
-    # Task 1: Tạo dữ liệu giả vào Cassandra (Chạy vô tận)
+    # Task 1: Persistent Synthetic Data Generation into Cassandra
     task_gen = PythonOperator(
         task_id='service_data_generator',
         python_callable=run_data_gen
     )
 
-    # Task 2: CDC từ Cassandra sang Kafka (Chạy vô tận)
+    # Task 2: Change Data Capture (CDC) from Cassandra to Kafka
     task_cdc = PythonOperator(
         task_id='service_kafka_cdc',
         python_callable=run_cdc
     )
 
-    # Task 3: Spark Streaming từ Kafka sang MySQL (Chạy vô tận)
+    # Task 3: Spark Structured Streaming from Kafka to MySQL Warehouse
     task_stream = PythonOperator(
         task_id='service_spark_streaming',
         python_callable=run_stream
     )
 
-    # Cấu trúc song song: 3 task này chạy độc lập và không bao giờ kết thúc
+    # Parallel Execution: Services run independently and indefinitely
     [task_gen, task_cdc, task_stream]
