@@ -1,57 +1,55 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from database import get_db
+from .database import get_db
+from cassandra.cluster import Cluster
+from cassandra.util import uuid_from_time
+import datetime
 
-app = FastAPI(title="Recruitment CDC Pipeline API")
+app = FastAPI(title="Recruitment Analytics API")
+
+# Setup Cassandra for real-time user tracking
+# This connects to the same cluster as your CDC producer
+try:
+    cluster = Cluster(['cassandra'], port=9042)
+    session = cluster.connect('keyspace_name')
+except Exception as e:
+    print(f"Failed to connect to Cassandra: {e}")
 
 @app.get("/health")
 def health_check():
-    """Verify API and connection status."""
     return {"status": "operational"}
 
+@app.post("/api/v1/track")
+async def track_action(job_id: int, action_type: str):
+    """
+    Triggers the CDC pipeline by inserting a new record into Cassandra.
+    action_type can be: 'click', 'conversion', 'qualified', 'unqualified'
+    """
+    create_time = uuid_from_time(datetime.datetime.now())
+    ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    bid = 1 if action_type == 'click' else 0 # Simple logic for spend_hour
+    
+    query = """
+        INSERT INTO tracking (create_time, job_id, custom_track, ts, bid)
+        VALUES (%s, %s, %s, %s, %s)
+    """
+    try:
+        session.execute(query, (create_time, job_id, action_type, ts, bid))
+        return {"status": "success", "event": action_type}
+    except Exception as e:
+        # Properly raising the exception we just discussed
+        raise HTTPException(status_code=500, detail=f"Database insertion failed: {str(e)}")
+
 @app.get("/api/v1/metrics/summary")
-def get_pipeline_summary(db: Session = Depends(get_db)):
-    """
-    Fetch aggregated metrics comparing Kafka and Cassandra for the last 24 hours.
-    This provides a fair comparison of data ingestion consistency.
-    """
-    # Using NOW() and INTERVAL 1 DAY to filter records from the last 24 hours
+def get_summary(db: Session = Depends(get_db)):
     query = text("""
-        SELECT 
-            sources, 
-            SUM(clicks) as total_clicks, 
-            SUM(conversion) as total_conversions,
-            SUM(spend_hour) as total_spend
+        SELECT sources, SUM(clicks) as total_clicks, SUM(conversion) as total_conversions
         FROM events 
-        WHERE updated_at >= NOW() - INTERVAL 1 DAY
+        WHERE updated_at >= NOW() - INTERVAL 24 HOUR
         GROUP BY sources
     """)
     try:
-        result = db.execute(query).mappings().all()
-        return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/api/v1/metrics/top-jobs")
-def get_top_performing_jobs(limit: int = 10, db: Session = Depends(get_db)):
-    """
-    Retrieve top jobs based on engagement metrics within the last 24 hours.
-    """
-    query = text("""
-        SELECT 
-            job_id, 
-            SUM(clicks) as clicks, 
-            SUM(conversion) as conversions,
-            sources
-        FROM events 
-        WHERE updated_at >= NOW() - INTERVAL 1 DAY
-        GROUP BY job_id, sources
-        ORDER BY clicks DESC
-        LIMIT :limit
-    """)
-    try:
-        result = db.execute(query, {"limit": limit}).mappings().all()
-        return result
+        return db.execute(query).mappings().all()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
