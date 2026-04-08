@@ -13,9 +13,10 @@ def health_check():
 @app.get("/api/v1/metrics/summary")
 def get_pipeline_summary(db: Session = Depends(get_db)):
     """
-    Fetch aggregated metrics comparing Kafka Streaming and Cassandra Batch sources.
-    This helps in monitoring data consistency across the CDC pipeline.
+    Fetch aggregated metrics comparing Kafka and Cassandra for the last 24 hours.
+    This provides a fair comparison of data ingestion consistency.
     """
+    # Using NOW() and INTERVAL 1 DAY to filter records from the last 24 hours
     query = text("""
         SELECT 
             sources, 
@@ -23,6 +24,7 @@ def get_pipeline_summary(db: Session = Depends(get_db)):
             SUM(conversion) as total_conversions,
             SUM(spend_hour) as total_spend
         FROM events 
+        WHERE updated_at >= NOW() - INTERVAL 1 DAY
         GROUP BY sources
     """)
     try:
@@ -34,8 +36,7 @@ def get_pipeline_summary(db: Session = Depends(get_db)):
 @app.get("/api/v1/metrics/top-jobs")
 def get_top_performing_jobs(limit: int = 10, db: Session = Depends(get_db)):
     """
-    Retrieve top jobs based on engagement metrics (clicks and conversions).
-    Used for the 'Top Jobs Table' in the Analytics Dashboard.
+    Retrieve top jobs based on engagement metrics within the last 24 hours.
     """
     query = text("""
         SELECT 
@@ -44,6 +45,7 @@ def get_top_performing_jobs(limit: int = 10, db: Session = Depends(get_db)):
             SUM(conversion) as conversions,
             sources
         FROM events 
+        WHERE updated_at >= NOW() - INTERVAL 1 DAY
         GROUP BY job_id, sources
         ORDER BY clicks DESC
         LIMIT :limit

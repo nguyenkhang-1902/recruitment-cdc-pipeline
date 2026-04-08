@@ -25,6 +25,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: recruitment_dw
+      MYSQL_TIME_ZONE: Asia/Ho_Chi_Minh
     networks:
       - etl-net
 
@@ -127,6 +128,7 @@ services:
     container_name: recruitment-api
     environment:
       - DATABASE_URL=mysql+pymysql://root:root@mysql:3306/recruitment_dw
+      - TZ=Asia/Ho_Chi_Minh
     ports:
       - "8000:8000"
     depends_on:

@@ -70,13 +70,51 @@ def main():
 
     # 7. Custom Sink: MySQL JDBC Micro-batch Writer
     def write_to_mysql(df, epoch_id):
-        """Standard JDBC writer for Structured Streaming micro-batches."""
+        """
+        Advanced JDBC writer using 'Upsert' logic to prevent data duplication.
+        Ensures Kafka_Streaming metrics are consistent with Cassandra_Batch.
+        """
+        db_url = "jdbc:mysql://mysql:3306/recruitment_dw"
+        db_user = "root"
+        db_pass = "root"
+
+        # Step 1: Write the micro-batch to a temporary staging table
+        staging_table = f"temp_events_batch_{epoch_id}"
         df.write.format("jdbc") \
-            .option("url", dw_url) \
-            .option("dbtable", "events") \
+            .option("url", db_url) \
+            .option("dbtable", staging_table) \
             .option("user", db_user).option("password", db_pass) \
             .option("driver", "com.mysql.cj.jdbc.Driver") \
-            .mode("append").save()
+            .mode("overwrite").save()
+
+        # Step 2: Execute Upsert logic from staging to main table
+        # This assumes (dates, hours, job_id, publisher_id, campaign_id, sources) is a UNIQUE KEY
+        upsert_sql = f"""
+            INSERT INTO events (dates, hours, job_id, publisher_id, campaign_id, group_id, company_id, spend_hour, clicks, conversion, qualified_application, disqualified_application, updated_at, sources)
+            SELECT * FROM {staging_table}
+            ON DUPLICATE KEY UPDATE
+                spend_hour = VALUES(spend_hour),
+                clicks = VALUES(clicks),
+                conversion = VALUES(conversion),
+                qualified_application = VALUES(qualified_application),
+                disqualified_application = VALUES(disqualified_application),
+                updated_at = VALUES(updated_at)
+        """
+        
+        # We use a simple way to execute this raw SQL via a temporary connection
+        import mysql.connector
+        conn = mysql.connector.connect(host="mysql", user=db_user, password=db_pass, database="recruitment_dw")
+        cursor = conn.cursor()
+        try:
+            cursor.execute(upsert_sql)
+            cursor.execute(f"DROP TABLE {staging_table}") # Clean up
+            conn.commit()
+        except Exception as e:
+            print(f"[ERROR] Upsert failed for epoch {epoch_id}: {e}")
+            conn.rollback()
+        finally:
+            cursor.close()
+            conn.close()
 
     # 8. Query Execution: Fault-tolerant Streaming Context
     checkpoint_path = "/opt/airflow/scripts/processing/checkpoints/stream_etl"
