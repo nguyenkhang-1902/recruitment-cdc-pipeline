@@ -133,6 +133,18 @@ services:
       - mysql
     networks:
       - etl-net
+
+  frontend:
+    build:
+      context: ./data-pipeline/app
+      dockerfile: frontend/Dockerfile
+    container_name: recruitment-dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    networks:
+      - etl-net
 # --- NETWORK & STORAGE DEFINITIONS ---
 networks:
   etl-net:
