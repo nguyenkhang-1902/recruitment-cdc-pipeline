@@ -122,7 +122,8 @@ services:
 
   backend:
     build:
-      context: ./app/backend
+      context: ./data-pipeline/app
+      dockerfile: backend/Dockerfile
     container_name: recruitment-api
     environment:
       - DATABASE_URL=mysql+pymysql://root:root@mysql:3306/recruitment_dw
