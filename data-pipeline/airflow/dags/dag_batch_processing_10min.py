@@ -14,10 +14,10 @@ default_args = {
 }
 
 with DAG(
-    '2_batch_etl_every_2min',
+    '2_batch_etl_every_10min',
     default_args=default_args,
-    description='Chạy Batch ETL mỗi 2 phút để tổng hợp dữ liệu',
-    schedule_interval=timedelta(minutes=2),
+    description='Chạy Batch ETL mỗi 10 phút để tổng hợp dữ liệu',
+    schedule_interval=timedelta(minutes=10),
     catchup=False,
     max_active_runs=1 
 ) as dag:

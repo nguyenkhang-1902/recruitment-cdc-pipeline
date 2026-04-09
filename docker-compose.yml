@@ -141,6 +141,8 @@ services:
       context: ./data-pipeline/app
       dockerfile: frontend/Dockerfile
     container_name: recruitment-dashboard
+    volumes:
+      - ./data-pipeline/app/frontend:/app
     ports:
       - "8501:8501"
     depends_on:

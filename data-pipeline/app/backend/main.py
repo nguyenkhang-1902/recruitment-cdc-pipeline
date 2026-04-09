@@ -1,55 +1,96 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from .database import get_db
+from database import get_db 
 from cassandra.cluster import Cluster
 from cassandra.util import uuid_from_time
 import datetime
+import logging
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Recruitment Analytics API")
 
-# Setup Cassandra for real-time user tracking
-# This connects to the same cluster as your CDC producer
-try:
-    cluster = Cluster(['cassandra'], port=9042)
-    session = cluster.connect('keyspace_name')
-except Exception as e:
-    print(f"Failed to connect to Cassandra: {e}")
+# Global variables for Cassandra connection
+cassandra_cluster = None
+cassandra_session = None
+
+def get_cassandra_session():
+    """Lazy initialization of Cassandra session with retry logic."""
+    global cassandra_cluster, cassandra_session
+    if cassandra_session:
+        return cassandra_session
+    
+    try:
+        # Use 'cassandra' as the hostname defined in docker-compose
+        cassandra_cluster = Cluster(['cassandra'], port=9042, connect_timeout=10)
+        cassandra_session = cassandra_cluster.connect('keyspace_name') # Ensure keyspace exists
+        logger.info("Successfully connected to Cassandra.")
+        return cassandra_session
+    except Exception as e:
+        logger.error(f"Waiting for Cassandra... {e}")
+        return None
 
 @app.get("/health")
 def health_check():
-    return {"status": "operational"}
+    session = get_cassandra_session()
+    return {
+        "api_status": "operational",
+        "cassandra_status": "connected" if session else "disconnected"
+    }
+
+@app.get("/api/v1/metrics/job-list")
+def get_job_list(db: Session = Depends(get_db)):
+    """Fetch all unique job IDs present in the warehouse."""
+    try:
+        query = text("SELECT DISTINCT job_id FROM events")
+        rows = db.execute(query).all()
+        return [row[0] for row in rows]
+    except Exception as e:
+        logger.error(f"MySQL Error: {e}")
+        return []
+
+@app.get("/api/v1/metrics/job/{job_id}")
+def get_job_specific_metrics(job_id: int, db: Session = Depends(get_db)):
+    """Fetch aggregated metrics for a specific job ID."""
+    query = text("""
+        SELECT 
+            COALESCE(SUM(clicks), 0) as clicks, 
+            COALESCE(SUM(conversion), 0) as conversions,
+            COALESCE(SUM(qualified_application), 0) as qualified
+        FROM events 
+        WHERE job_id = :job_id
+    """)
+    try:
+        result = db.execute(query, {"job_id": job_id}).mappings().first()
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/v1/track")
 async def track_action(job_id: int, action_type: str):
-    """
-    Triggers the CDC pipeline by inserting a new record into Cassandra.
-    action_type can be: 'click', 'conversion', 'qualified', 'unqualified'
-    """
+    """Logs user interaction to Cassandra."""
+    session = get_cassandra_session()
+    if session is None:
+        raise HTTPException(
+            status_code=503, 
+            detail="Cassandra is still warming up or unreachable. Please try again in a moment."
+        )
+
     create_time = uuid_from_time(datetime.datetime.now())
     ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    bid = 1 if action_type == 'click' else 0 # Simple logic for spend_hour
+    # Logic: conversion means application, click means job view
+    bid = 1 if action_type == 'click' else 0
     
     query = """
-        INSERT INTO tracking (create_time, job_id, custom_track, ts, bid)
+        INSERT INTO tracking (create_time, job_id, custom_track, ts, bid) 
         VALUES (%s, %s, %s, %s, %s)
     """
     try:
         session.execute(query, (create_time, job_id, action_type, ts, bid))
-        return {"status": "success", "event": action_type}
+        return {"status": "success", "job_id": job_id, "action": action_type}
     except Exception as e:
-        # Properly raising the exception we just discussed
+        logger.error(f"Cassandra Insert Error: {e}")
         raise HTTPException(status_code=500, detail=f"Database insertion failed: {str(e)}")
-
-@app.get("/api/v1/metrics/summary")
-def get_summary(db: Session = Depends(get_db)):
-    query = text("""
-        SELECT sources, SUM(clicks) as total_clicks, SUM(conversion) as total_conversions
-        FROM events 
-        WHERE updated_at >= NOW() - INTERVAL 24 HOUR
-        GROUP BY sources
-    """)
-    try:
-        return db.execute(query).mappings().all()
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))

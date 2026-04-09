@@ -1,13 +1,10 @@
 import streamlit as st
 import pandas as pd
 import requests
-import plotly.express as px
 import plotly.graph_objects as go
 import time
 
 st.set_page_config(page_title="Recruitment Data Product", layout="wide")
-
-# Internal Docker Networking URLs
 BACKEND_URL = "http://recruitment-api:8000/api/v1"
 
 def fetch_data(endpoint):
@@ -16,48 +13,40 @@ def fetch_data(endpoint):
         return response.json() if response.status_code == 200 else None
     except: return None
 
-# UI Header
 st.title("💼 Recruitment CDC Data Product")
 st.markdown("---")
 
-# Navigation Tabs
-tab_monitor, tab_portal = st.tabs(["📊 Analytics Dashboard", "🌐 Candidate Portal (Live Interaction)"])
+tab_monitor, tab_portal = st.tabs(["📊 Job Analytics", "🌐 Candidate Portal"])
 
-# --- TAB 1: ANALYTICS DASHBOARD ---
 with tab_monitor:
-    st.header("Pipeline Real-time Metrics")
+    # Fetch job list for the dropdown filter
+    job_list = fetch_data("metrics/job-list")
     
-    summary_data = fetch_data("metrics/summary")
-    if summary_data:
-        df = pd.DataFrame(summary_data)
+    if job_list:
+        selected_job = st.selectbox("Select Job ID to Inspect", options=job_list)
         
-        # Summary Metrics
-        m1, m2, m3 = st.columns(3)
-        m1.metric("Total Clicks", f"{df['total_clicks'].sum():,}")
-        m2.metric("Total Applications", f"{df['total_conversions'].sum():,}")
-        m3.metric("System Status", "Live", delta="CDC Active")
-
-        # Funnel Chart: Click -> Apply -> Qualified
-        st.subheader("Recruitment Funnel (Conversion Rate)")
-        # Calculate totals for funnel
-        clicks = df['total_clicks'].sum()
-        apps = df['total_conversions'].sum()
-        # Mocking qualified for demo if not in summary yet, otherwise use df['total_qualified'].sum()
-        qualified = apps * 0.4 
+        # Fetch detailed metrics for selected job
+        job_stats = fetch_data(f"metrics/job/{selected_job}")
         
-        fig_funnel = go.Figure(go.Funnel(
-            y = ["Job Views", "Applications", "Qualified"],
-            x = [clicks, apps, qualified],
-            textinfo = "value+percent initial"
-        ))
-        st.plotly_chart(fig_funnel, use_container_width=True)
+        if job_stats:
+            m1, m2, m3 = st.columns(3)
+            m1.metric("Job Views", job_stats['clicks'] or 0)
+            m2.metric("Applications", job_stats['conversions'] or 0)
+            m3.metric("Qualified", job_stats['qualified'] or 0)
 
-# --- TAB 2: CANDIDATE PORTAL ---
+            # Job Specific Funnel
+            st.subheader(f"Conversion Funnel for Job {selected_job}")
+            fig_funnel = go.Figure(go.Funnel(
+                y = ["Views", "Applications", "Qualified"],
+                x = [job_stats['clicks'] or 0, job_stats['conversions'] or 0, job_stats['qualified'] or 0],
+                textinfo = "value+percent initial"
+            ))
+            st.plotly_chart(fig_funnel, use_container_width=True)
+    else:
+        st.warning("No data available in warehouse yet.")
+
 with tab_portal:
-    st.header("Candidate Job Board")
-    st.info("Interacting with buttons here will trigger the real-time CDC pipeline.")
-
-    # Simulated Job List
+    st.header("Live Candidate Portal")
     jobs = [
         {"id": 101, "title": "Data Engineer", "loc": "Ho Chi Minh"},
         {"id": 102, "title": "Backend Developer", "loc": "Hanoi"},
@@ -68,18 +57,14 @@ with tab_portal:
         with st.container(border=True):
             c1, c2 = st.columns([3, 1])
             c1.subheader(job['title'])
-            c1.write(f"Location: {job['loc']} | Job ID: {job['id']}")
+            c1.write(f"ID: {job['id']} | {job['loc']}")
             
-            # Interaction Buttons
             if c2.button("Apply Now", key=f"app_{job['id']}"):
                 requests.post(f"{BACKEND_URL}/track?job_id={job['id']}&action_type=conversion")
-                st.toast(f"Application sent for {job['title']}!")
+                st.toast("Application tracked!")
                 time.sleep(0.5)
                 st.rerun()
 
-    st.warning("Note: After interacting, switch to the Analytics tab to see the live update.")
-
-# Refresh settings
-st.sidebar.markdown("### System Config")
-if st.sidebar.button("Force Refresh Dashboard"):
+st.sidebar.markdown("### Controls")
+if st.sidebar.button("Refresh Data"):
     st.rerun()
