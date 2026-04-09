@@ -8,7 +8,7 @@ sys.path.append('/opt/airflow/scripts')
 
 # Import core execution functions from the pipeline scripts
 try:
-    from ingestion.data_generator import main as run_data_gen
+    # from ingestion.data_generator import main as run_data_gen
     from ingestion.kafka_cdc_producer import cdc_polling_consumer as run_cdc
     from processing.stream_etl_kafka_to_mysql import main as run_stream
 except ImportError as e:
@@ -19,16 +19,16 @@ default_args = {
     'start_date': datetime(2026, 4, 1),
     'retries': 5,
     'retry_delay': timedelta(minutes=1),
-    'execution_timeout': None,  # Allow tasks to run indefinitely for continuous processing
+    'execution_timeout': None, 
 }
 
 with DAG(
     '1_continuous_services_pipeline',
     default_args=default_args,
     description='Orchestration for continuous Data Generation, CDC, and Stream ETL services',
-    schedule_interval=None,  # Manual trigger only
+    schedule_interval=None,
     catchup=False,
-    max_active_runs=1  # Prevent overlapping execution runs
+    max_active_runs=1 
 ) as dag:
 
     # Task 1: Persistent Synthetic Data Generation into Cassandra
