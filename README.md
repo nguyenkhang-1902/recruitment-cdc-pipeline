@@ -1,6 +1,13 @@
+# Recruitment Real-time CDC Pipeline 
+
 [![Six Sigma Compliant](https://img.shields.io/badge/Management-Six%20Sigma-yellowgreen)](https://en.wikipedia.org/wiki/Six_Sigma)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Role: Data Engineer](https://img.shields.io/badge/Role-Data%20Engineer-blue)](https://github.com/nguyenkhang-1902)
+[![Apache Kafka](https://img.shields.io/badge/Streaming-Apache%20Kafka-black?style=flat&logo=apachekafka)](https://kafka.apache.org/)
+[![Apache Spark](https://img.shields.io/badge/Processing-Apache%20Spark-E25A1C?style=flat&logo=apachespark&logoColor=white)](https://spark.apache.org/)
+[![Apache Airflow](https://img.shields.io/badge/Orchestration-Apache%20Airflow-017CEE?style=flat&logo=apacheairflow&logoColor=white)](https://airflow.apache.org/)
+[![Docker](https://img.shields.io/badge/Infrastructure-Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 
 ## 📌 Project Overview
 
@@ -95,112 +102,192 @@ The architecture follows the **Kappa Architecture** principle, focusing on real-
 
 #### 3. Data Product Layer
 * The **Streamlit Dashboard** fetches live data from the **FastAPI** endpoints to visualize the recruitment funnel and job-specific metrics.
----
 
-### 🐳 Step 1 — Start All Infrastructure
-In the project root, launch all containers (Cassandra, Kafka, Spark, MySQL, Airflow, FastAPI, Streamlit):
+-----
 
-Đây là nội dung mục **How to Run / Installation** được thiết kế chi tiết theo phong cách file README tham khảo của bạn, giúp người kế nhiệm có thể triển khai hệ thống một cách tuần tự và dễ dàng nhất.
+### 📋 Prerequisites
 
----
+Before launching, ensure your system meets the following requirements to guarantee stable operation (especially since Spark and Cassandra are resource-intensive):
 
-### 🚀 3. How to Run / Installation (Hướng dẫn khởi chạy)
+  * **Software:**
+      * Docker & Docker Compose installed.
+      * Git (to clone the project).
+  * **Minimum Hardware Configuration:**
+      * **RAM:** 8GB ( **16GB Recommended** to prevent container freezing/OOM issues).
+      * **CPU:** Minimum 4 Cores.
+      * **Free Disk Space:** \~5GB.
+  * **Docker Desktop Configuration:** Ensure you have allocated at least **8GB of RAM** to Docker in the *Settings \> Resources* section.
 
-### 🐳 Step 1 — Start All Infrastructure
-In the project root, launch all containers (Cassandra, Kafka, Spark, MySQL, Airflow, FastAPI, Streamlit):
+-----
 
-```commandline
-docker-compose up -d
+### 🚀 Getting Started
+
+The project supports two operational modes depending on your testing objectives:
+
+-----
+
+#### 🔹 Step 1: Spin up Docker Infrastructure
+
+Before proceeding with any specific mode, you must deploy the entire ecosystem, including Cassandra, MySQL, Kafka, Spark, Airflow, and FastAPI.
+
+From the project root directory, run:
+
+```bash
+docker-compose up -d --build
 ```
 
-Check running services:
-```commandline
+Verify the status of all containers:
+
+```bash
 docker ps
 ```
-*Wait about 60-90 seconds for Cassandra and Kafka to fully initialize before proceeding.*
 
----
+> **Note:** Ensure all services (`recruitment-api`, `recruitment-dashboard`, `cassandra`, `mysql`, `broker`, `airflow-scheduler`) are in the **Up** (Healthy) state.
 
-### 🗄️ Step 2 — Initialize Database Schemas
+![Docker Infrastructure Status](images/docker_infrastructure_status.png)
+-----
 
-#### 🔹 Cassandra Setup (Source)
-Access the Cassandra container to create the tracking keyspace and table:
-```commandline
-docker exec -it cassandra cqlsh
-```
-Run the following commands:
-```sql
-CREATE KEYSPACE IF NOT EXISTS keyspace_name 
-WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+#### 🔹 Step 2: Seed Initial Data
 
-CREATE TABLE keyspace_name.tracking (
-    create_time uuid PRIMARY KEY,
-    job_id int,
-    custom_track text,
-    ts timestamp,
-    bid int
-);
-CREATE INDEX IF NOT EXISTS ON keyspace_name.tracking (job_id);
-```
+The project includes a sample dataset to define **Dimensions** in MySQL, which are essential for performing Join operations within the Spark engine.
 
-#### 🔹 MySQL Setup (Warehouse)
-Access MySQL to create the analytical tables:
-```commandline
-docker exec -it mysql mysql -u root -p
-```
-*(Enter password when prompted)*
-```sql
-CREATE DATABASE IF NOT EXISTS recruitment_dw;
-USE recruitment_dw;
-
-CREATE TABLE job (
-    id INT PRIMARY KEY,
-    company_id INT,
-    title VARCHAR(255)
-);
-
-CREATE TABLE events (
-    job_id INT,
-    clicks INT DEFAULT 0,
-    conversion INT DEFAULT 0,
-    qualified_application INT DEFAULT 0,
-    sources VARCHAR(50),
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY (job_id, sources)
-);
-
--- Seed initial Job data
-INSERT INTO job (id, company_id, title) VALUES 
-(101, 1, 'Data Engineer'), 
-(102, 1, 'Backend Developer'), 
-(103, 1, 'AI Researcher');
-```
-
----
-
-### ⛓️ Step 3 — Orchestrate Pipelines with Airflow
-1. Access the Airflow Web UI at: `http://localhost:8080` (Login: `airflow`/`airflow`).
-2. Locate the following DAGs and switch them to **ON**:
-    * `1_continuous_services_pipeline`: Activates the **CDC Producer** and **Spark Streaming** services.
-    * `2_batch_etl_every_10min`: Sets up the **Batch Reconciliation** layer.
-
----
-
-### 🌐 Step 4 — Launch the Data Product
-Access the integrated web application:
-* **Analytics Dashboard & Candidate Portal:** `http://localhost:8501` (Streamlit)
-* **Backend API Documentation (Swagger):** `http://localhost:8000/docs` (FastAPI)
-
----
-
-### 🧪 Step 5 — Verify the Real-time Flow (Testing)
-1.  Go to the **Candidate Portal** tab on the Streamlit UI.
-2.  Click **"Apply Now"** on any job (e.g., Data Engineer - ID 101).
-3.  Monitor the **recruitment-api** logs:
-    ```commandline
-    docker logs -f recruitment-api
+1.  **Access the MySQL container:**
+    ```bash
+    docker exec -it mysql mysql -u root -p123456
     ```
-    *You should see a `POST /api/v1/track ... 200 OK` response.*
-4.  Switch back to the **Analytics Dashboard** tab.
-5.  Wait **~30 seconds** for the Spark micro-batch to process. The Funnel Chart for Job 101 will update automatically.
+2.  **Initialize Schema and Data:**
+    Execute the provided SQL files to create tables and populate data for: `application`, `campaign`, `company`, `conversation`, `dev_user`, `events`, `group`, `job`, and `job_location`.
+
+![Database Schema Overview](images/database_schema_overview.png)
+
+---
+#### 🔹 Step 3: Choose Your Operational Path
+
+### 🛣️ Path 1: Automated Data Simulation
+This approach utilizes the `data_generator.py` script to automatically generate thousands of random records. It is designed to stress-test the pipeline's throughput and verify the end-to-end flow without manual intervention.
+
+1. **Activate the Airflow DAG:**
+   - Access the Airflow UI at: `http://localhost:8080` (Default: admin/admin).
+   - Locate and **Unpause** the DAG: `1_continuous_services_pipeline`.
+2. **Operational Mechanism:**
+   - The `service_data_generator` task will continuously ingest simulated events into the Cassandra `tracking` table.
+   - The CDC engine and Spark Streaming job will automatically capture these events and sink them into the MySQL Warehouse.
+3. **Verify via Dashboard:**
+   - Open the Streamlit Dashboard at: `localhost:8501`.
+   - Navigate to the **Analytics Dashboard** tab; you will observe the metrics increasing incrementally after each Spark processing cycle (every 30 seconds).
+
+!(images/dashboard_auto_update.png)
+
+---
+#### 📊 Data Flow Monitoring
+To accurately track the data volume flowing through each infrastructure layer, use the following Terminal commands:
+
+* **Source Database Check (Cassandra):**
+    ```bash
+    docker exec -it cassandra cqlsh -e "SELECT COUNT(*) FROM keyspace_name.tracking;"
+    ```
+    > **Expected Result:** Returns the total number of raw records ingested. This figure serves as the **"Source-of-truth"** for reconciliation with downstream layers.
+
+* **Message Broker Check (Kafka):**
+    ```bash
+    docker exec -it broker kafka-run-class kafka.tools.GetOffsetShell --broker-list localhost:29092 --topic tracking_events
+    ```
+    > **Expected Result:** The message count (offsets) in Kafka should match or closely approximate the Cassandra count. If this number remains static while Cassandra grows, investigate the CDC Producer.
+
+* **Data Warehouse Check (MySQL):**
+    ```bash
+    docker exec -it mysql mysql -u root -proot -e "SELECT SUM(clicks) + SUM(conversion) FROM recruitment_dw.events;"
+    ```
+    > **Expected Result:** The aggregated record count in MySQL should converge toward the Kafka count (with a ~30s latency due to Spark micro-batch intervals). Steady growth here confirms full system synchronization.
+---
+
+### 🛣️ Path 2: Real-world Interaction
+Once the pipeline flow is verified in Path 1, switch to this mode to experience the project as a live product where data is triggered solely by user behavior.
+
+1. **Stop Simulation Task:**
+   - In the Airflow UI, **Pause** the `service_data_generator` task to clear the stream of test data.
+2. **Engage with the Candidate Portal:**
+   - Access the Streamlit Dashboard at: `http://localhost:8501`.
+   - Switch to the **"Candidate Portal"** tab.
+   - Interact by clicking **"Apply Now"** or **"View Job"** on various job postings (e.g., Job IDs: 101, 102, 103).
+3. **Observe the Real-time CDC Pipeline:**
+   - Each click sends a request to **FastAPI** (`recruitment-api`).
+   - Flow: FastAPI writes to Cassandra → Triggers CDC Producer → Pushes to Kafka → Spark Streaming processes the event.
+4. **Dashboard Reflection:**
+   - Return to the **"Analytics Dashboard"** tab. The Conversion Funnel will update to reflect your specific actions with a latency of < 30 seconds.
+5. **Periodic Reconciliation (Batch Layer):**
+   - Enable the DAG `2_batch_etl_every_10min`. This triggers a routine scan to synchronize Cassandra and MySQL every 10 minutes, ensuring **99.9% data consistency** and correcting any potential streaming anomalies.
+
+![Candidate Portal](images/candidate_portal_interface.png)
+
+   ---
+
+### 📊 Data Validation
+
+#### 📡 API Documentation
+
+The system leverages **FastAPI** to automatically generate comprehensive API documentation. This interface allows for rapid testing of endpoints and system connectivity without the need for manual database queries.
+
+* **Access URL:** `http://localhost:8000/docs`
+
+**Endpoints Overview:**
+The Swagger UI provides a complete visualization of all data flows, ranging from system health checks to analytical data retrieval.
+![API Overview](images/api_documentation_overview.png)
+
+**Health Check Verification:**
+Use the `/health` endpoint to confirm that the Backend has successfully established a connection with the Cassandra cluster.
+
+![Health Check Detail](images/api_health_check_detail.png)
+
+---
+
+#### 🗄️ Direct Query & Data Reconciliation
+
+Beyond the API, you can perform manual data reconciliation by querying both ends of the pipeline directly:
+
+**Verify Source Data (Cassandra):**
+Confirm that user interaction data from the portal has been persisted.
+
+```sql
+-- Validate that the interaction record exists in the source
+SELECT * FROM keyspace_name.tracking WHERE job_id = 101 ALLOW FILTERING;
 ```
+
+**Verify Sink Data (MySQL Warehouse):**
+Confirm that the final aggregated results have been successfully processed by Spark Streaming and stored in the warehouse.
+
+```sql
+-- Validate the final output processed via the Streaming layer
+SELECT * FROM recruitment_dw.events WHERE sources = 'Kafka_Streaming' ORDER BY updated_at DESC;
+```
+
+-----
+
+### 📊 Dashboard Summary
+
+The final layer of the pipeline is a complete **Data Product**, enabling data-driven recruitment decisions based on real-time evidence rather than intuition.
+![Job 101 Analytics](images/job_analytics_dashboard_101.png)
+![Job 102 Analytics](images/job_analytics_dashboard_102.png)
+
+#### ✨ Key Features Delivered:
+
+  * **Real-time Insights:** Metrics for Views, Applications, and Qualified candidates are updated with sub-30s latency.
+  * **Drill-down Capability:** Enables granular filtering to analyze the performance of specific Job IDs.
+  * **Conversion Funnel:** Visualizes the conversion rate across stages, allowing recruiters to pinpoint bottlenecks in the hiring process immediately.
+  * **System Stability:** The entire stack is containerized with Docker, ensuring high availability and data recovery via **Spark Checkpointing** mechanisms.
+
+<!-- end list -->
+
+---
+
+## ✍️ Author 
+
+**Nguyen Khang** 
+*Data Engineer | Big Data Enthusiast*
+
+If you have any questions about this project, potential collaborations, or just want to talk about Data Engineering, feel free to reach out!
+
+* **GitHub:** [@nguyenkhang-1902](https://github.com/nguyenkhang-1902)
+* **LinkedIn:**  [Khang Nguyễn](https://www.linkedin.com/in/khang-nguy%E1%BB%85n-5228652a0/)
+* **Email:** nguyenkhang1150@gmail.com
+---

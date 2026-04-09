@@ -90,14 +90,19 @@ def main():
         # Step 2: Execute Upsert logic from staging to main table
         # This assumes (dates, hours, job_id, publisher_id, campaign_id, sources) is a UNIQUE KEY
         upsert_sql = f"""
-            INSERT INTO events (dates, hours, job_id, publisher_id, campaign_id, group_id, company_id, spend_hour, clicks, conversion, qualified_application, disqualified_application, updated_at, sources)
+            INSERT INTO events (
+                dates, hours, job_id, publisher_id, campaign_id, group_id, company_id, 
+                spend_hour, clicks, conversion, qualified_application, 
+                disqualified_application, updated_at, sources
+            )
             SELECT * FROM {staging_table}
             ON DUPLICATE KEY UPDATE
-                spend_hour = VALUES(spend_hour),
-                clicks = VALUES(clicks),
-                conversion = VALUES(conversion),
-                qualified_application = VALUES(qualified_application),
-                disqualified_application = VALUES(disqualified_application),
+                -- Logic cộng dồn: Lấy giá trị hiện tại của bảng chính cộng với giá trị mới từ batch
+                spend_hour = events.spend_hour + VALUES(spend_hour),
+                clicks = events.clicks + VALUES(clicks),
+                conversion = events.conversion + VALUES(conversion),
+                qualified_application = events.qualified_application + VALUES(qualified_application),
+                disqualified_application = events.disqualified_application + VALUES(disqualified_application),
                 updated_at = VALUES(updated_at)
         """
         
