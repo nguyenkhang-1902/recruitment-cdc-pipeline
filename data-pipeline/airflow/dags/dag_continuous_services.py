@@ -8,7 +8,7 @@ sys.path.append('/opt/airflow/scripts')
 
 # Import core execution functions from the pipeline scripts
 try:
-    # from ingestion.data_generator import main as run_data_gen
+    from ingestion.data_generator import main as run_data_gen
     from ingestion.kafka_cdc_producer import cdc_polling_consumer as run_cdc
     from processing.stream_etl_kafka_to_mysql import main as run_stream
 except ImportError as e:
@@ -32,10 +32,10 @@ with DAG(
 ) as dag:
 
     # Task 1: Persistent Synthetic Data Generation into Cassandra
-    # task_gen = PythonOperator(
-    #     task_id='service_data_generator',
-    #     python_callable=run_data_gen
-    # )
+    task_gen = PythonOperator(
+        task_id='service_data_generator',
+        python_callable=run_data_gen
+    )
 
     # Task 2: Change Data Capture (CDC) from Cassandra to Kafka
     task_cdc = PythonOperator(
@@ -50,5 +50,5 @@ with DAG(
     )
 
     # Parallel Execution: Services run independently and indefinitely
-    # [task_gen, task_cdc, task_stream]
-    [task_cdc, task_stream]
+    [task_gen, task_cdc, task_stream]
+    # [task_cdc, task_stream]
