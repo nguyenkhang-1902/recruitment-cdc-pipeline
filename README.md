@@ -89,6 +89,7 @@ recruitment-cdc-pipeline/
 
 The architecture follows the **Kappa Architecture** principle, focusing on real-time stream processing with a batch layer for reconciliation.
 
+![Sơ đồ kiến trúc Recruitment CDC Pipeline](images/system-architecture.png.jpg)
 #### 1. Real-time Flow (CDC Pipeline)
 * **User Interaction:** Candidate clicks/applies on the **Streamlit Portal**.
 * **Event Capture:** **FastAPI** receives the request and writes to **Cassandra**.

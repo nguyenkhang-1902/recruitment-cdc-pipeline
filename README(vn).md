@@ -87,7 +87,7 @@ recruitment-cdc-pipeline/
 ### 🏗 Kiến trúc hệ thống
 
 Kiến trúc này tuân thủ nguyên lý **Kappa with Reconciliation**, tập trung vào xử lý luồng thời gian thực kết hợp với một lớp Batch để đối soát dữ liệu.
-
+![Sơ đồ kiến trúc Recruitment CDC Pipeline](images/system-architecture.png.jpg)
 #### 1. Luồng Real-time
 * **Tương tác người dùng:** Ứng viên thực hiện Click/Apply trên **Streamlit Portal**.
 * **Ghi nhận sự kiện:** **FastAPI** nhận yêu cầu và ghi dữ liệu vào **Cassandra**.
