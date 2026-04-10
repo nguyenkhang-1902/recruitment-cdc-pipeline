@@ -168,7 +168,8 @@ Phương án này sử dụng script `data_generator.py` để tự động tạ
    - Mở Dashboard Streamlit (`localhost:8501`).
    - Tại Tab **Analytics Dashboard**, các con số sẽ tăng lên liên tục sau mỗi chu kỳ xử lý của Spark (mỗi 30 giây).
 
-!(images/dashboard_auto_update.png)
+![dashboard_auto_update](images/dashboard_auto_update.png)
+
 ---
 #### 📊 Giám sát luồng dữ liệu 
 Để theo dõi chính xác lượng dữ liệu đang chảy qua từng lớp hạ tầng, hãy sử dụng các lệnh sau trong Terminal:

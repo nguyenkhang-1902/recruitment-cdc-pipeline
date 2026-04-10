@@ -177,7 +177,7 @@ This approach utilizes the `data_generator.py` script to automatically generate 
    - Open the Streamlit Dashboard at: `localhost:8501`.
    - Navigate to the **Analytics Dashboard** tab; you will observe the metrics increasing incrementally after each Spark processing cycle (every 30 seconds).
 
-!(images/dashboard_auto_update.png)
+![dashboard_auto_update](images/dashboard_auto_update.png)
 
 ---
 #### 📊 Data Flow Monitoring
